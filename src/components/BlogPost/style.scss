@@ -1,4 +1,5 @@
 .blogPostWrapper{
+   
     margin-bottom: 60px;
     .blogPostImg{
         img{
@@ -14,12 +15,16 @@
     }
     
     .blogPostContent{
+        h3{
+            color: #A30047 !important;
+        }
         ul{
             &.blogPostMeta{
                 margin-top: 20px;
                 display: flex;
                 align-items: center;
                 margin-bottom: 25px;
+               
                 li{
                     color: #666;
                     @media (max-width:375px) {

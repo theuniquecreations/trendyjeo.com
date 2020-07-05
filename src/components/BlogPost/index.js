@@ -11,26 +11,26 @@ import avatar from '../../images/blog-page/6.jpg'
 const blogPost = [
     {
         image: blog1,
-        title: 'What lawyer can do for you',
+        title: 'Title 1',
         text: 'I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.',
         meta: [
-            { avatar: avatar, name: 'By Aliza anne', level: 'Family Law', date: 'Oct 12,2018' }
+            { avatar: avatar, name: 'By Gayathri', level: 'Travel', date: 'Oct 12,2018' }
         ]
     },
     {
         image: blog2,
-        title: 'who do not know how to pursue pleasure',
+        title: 'Title 2',
         text: 'I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.',
         meta: [
-            { avatar: avatar, name: 'By Aliza anne', level: 'Family Law', date: 'Oct 12,2018' }
+            { avatar: avatar, name: 'By Gayathri', level: 'Fashion', date: 'Oct 12,2018' }
         ]
     },
     {
         image: blog3,
-        title: 'How you can find the best justice',
+        title: 'Title 3',
         text: 'I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.',
         meta: [
-            { avatar: avatar, name: 'By Aliza anne', level: 'Family Law', date: 'Oct 12,2018' }
+            { avatar: avatar, name: 'By Gayathri', level: 'Food', date: 'Oct 12,2018' }
         ]
     },
     {
@@ -38,15 +38,15 @@ const blogPost = [
         title: 'who do not know how to pursue pleasure',
         text: 'I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.',
         meta: [
-            { avatar: avatar, name: 'By Aliza anne', level: 'Family Law', date: 'Oct 12,2018' }
+            { avatar: avatar, name: 'By Gayathri', level: 'Life Style', date: 'Oct 12,2018' }
         ]
     },
     {
         image: blog5,
-        title: 'What lawyer can do for you',
+        title: 'Title 4',
         text: 'I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.',
         meta: [
-            { avatar: avatar, name: 'By Aliza anne', level: 'Family Law', date: 'Oct 12,2018' }
+            { avatar: avatar, name: 'By Gayathri', level: 'Family Law', date: 'Oct 12,2018' }
         ]
     },
 ]

@@ -24,15 +24,15 @@ const BlogFullWidth = () => {
     return (
         <Fragment>
             <header className="headerArea">
-                <HeaderTop className="headerTop" />
+                {/* <HeaderTop className="headerTop" /> */}
                 <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
             </header>
-            <Breadcumb
+            {/* <Breadcumb
                 className="breadcumbArea"
                 title="News"
                 breadcumbMenu={breadcumbMenu}
                 background={breadcumb}
-            />
+            /> */}
             <div className="blogPostArea blogFullWidth">
                 <div className="container">
                     <div className="row">
