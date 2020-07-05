@@ -2,9 +2,9 @@ import React from 'react'
 import './style.scss'
 
 const services = [
-    { icon: 'fi flaticon-lawyer', subtitle: 'Book Your', title: 'Appointment' },
-    { icon: 'fi flaticon-scale', subtitle: 'Get Free', title: 'Expert Advice' },
-    { icon: 'fi flaticon-network', subtitle: 'You Can Easily', title: 'Join Our Team' },
+    { icon: 'fi flaticon-social', subtitle: 'All Post', title: 'Latest Post' },
+    { icon: 'fi flaticon-scale', subtitle: 'Top Post', title: 'Featured Post' },
+    { icon: 'fi flaticon-network', subtitle: 'You Can Easily', title: 'Collaborate' },
 ]
 const Service = props => {
     return (
@@ -14,9 +14,9 @@ const Service = props => {
                     {services.map((service, i) => (
                         <div key={i} className="col-lg-4 col-md-6">
                             <div className="serviceItem">
-                                <div className="serviceIcon">
+                                {/* <div className="serviceIcon">
                                     <i className={service.icon}></i>
-                                </div>
+                                </div> */}
                                 <div className="serviceText">
                                     <span>{service.subtitle}</span>
                                     <h3>{service.title}</h3>

@@ -2,9 +2,9 @@
     .slideWrapper{
         position: relative;
         z-index: 1;
-        height: 800px;
+        height: 600px;
         @media (max-width:1200px) {
-            height: 600px;
+            height: 500px;
         }
         @media (max-width:768px) {
             height: 450px;
@@ -85,10 +85,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            background: -moz-linear-gradient(left, rgba(21, 26, 48, 0.82) 14%, rgba(27, 32, 53, 0.82) 15%, rgba(138, 140, 151, 0) 33%, rgba(255, 255, 255, 0) 52%, rgba(244, 244, 244, 0) 55%, rgba(166, 167, 175, 0) 68%, rgba(75, 79, 96, 0.86) 83%, rgba(21, 26, 48, 0.86) 92%);
-            background: -webkit-linear-gradient(left, rgba(21, 26, 48, 0.82) 14%, rgba(27, 32, 53, 0.82) 15%, rgba(138, 140, 151, 0) 33%, rgba(255, 255, 255, 0) 52%, rgba(244, 244, 244, 0) 55%, rgba(166, 167, 175, 0) 68%, rgba(75, 79, 96, 0.86) 83%, rgba(21, 26, 48, 0.86) 92%);
-            background: linear-gradient(to right, rgba(21, 26, 48, 0.82) 14%, rgba(27, 32, 53, 0.82) 15%, rgba(138, 140, 151, 0) 33%, rgba(255, 255, 255, 0) 52%, rgba(244, 244, 244, 0) 55%, rgba(166, 167, 175, 0) 68%, rgba(75, 79, 96, 0.86) 83%, rgba(21, 26, 48, 0.86) 92%);
-            opacity: .75;
+           opacity: .75;
         }
     }
     .slick-current{
@@ -122,7 +119,7 @@
     .slick-next {
         width: 50px;
         height: 50px;
-        border: 1px solid #959595;
+        border: 1px solid #A30047;
         border-radius: 5px;
         z-index: 10;
         @media (max-width:992px) {
@@ -135,7 +132,7 @@
         }
         
         &:hover{
-            background: #c0b596;
+            background: #A30047;
             border-color: #fff;
             &::before{
                 color: #fff;
@@ -181,7 +178,7 @@
         li{
             margin: 0;
             button{
-                background-color: #c0b596;
+                background-color: #A30047;
                 width: 14px;
                 height: 14px;
                 border: 1px solid #fff;

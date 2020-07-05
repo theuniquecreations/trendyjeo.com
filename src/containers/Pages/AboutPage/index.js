@@ -64,7 +64,7 @@ const AboutPage = () => {
     return (
         <Fragment>
             <header className="headerArea">
-                <HeaderTop className="headerTop" />
+                {/* <HeaderTop className="headerTop" /> */}
                 <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
             </header>
             <Breadcumb 
