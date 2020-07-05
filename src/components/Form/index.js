@@ -178,7 +178,7 @@ class Form extends Component {
                         </div>
                     </div>
                     <div className="col-sm-6 col-12">
-                        <div className="formInput">
+                        {/* <div className="formInput">
                             {this.props.addressInfo ? (
                                 <div className="formInput">
                                     <input
@@ -207,6 +207,7 @@ class Form extends Component {
                                 )}
 
                         </div>
+                    */}
                     </div>
                     <div className="col-12">
                         <div className="formInput">
@@ -214,13 +215,13 @@ class Form extends Component {
                                 className="form-control"
                                 value={this.state.description}
                                 onChange={this.changeHandler}
-                                placeholder="Case Description..."
+                                placeholder="Description..."
                                 name="description" />
                             {this.state.error.description && <p>{this.state.error.description}</p>}
                         </div>
                     </div>
                     <div className="col-12">
-                        <button type="submit">Appointment</button>
+                        <button type="submit">Reach me</button>
                     </div>
                 </div>
             </form>

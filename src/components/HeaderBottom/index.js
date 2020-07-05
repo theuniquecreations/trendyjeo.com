@@ -38,16 +38,19 @@ const HeaderBottom = props => {
                                         <li><NavLink exact to='/home-three'>Home Three</NavLink></li>
                                     </ul> */}
                                 </li>
-                                <li><NavLink exact to='/about'>About</NavLink></li>
+                                <li><NavLink exact to='/1about'>About</NavLink></li>
                               
 
-                                <li><NavLink exact to='/case-stadies'>Blog</NavLink>
-                                    {/* <ul className="subMenu">
-                                        <li><NavLink exact to='/case-stadies'>Cases</NavLink></li>
-                                        <li><NavLink exact to='/case-stadies-details'>Case single</NavLink></li>
-                                    </ul> */}
+                                <li><NavLink exact to='#'>Blog</NavLink>
+                                     <ul className="subMenu">
+                                        <li><NavLink exact to='/1case-stadies'>Fashion</NavLink></li>
+                                        <li><NavLink exact to='/1ase-stadies-details'>Food</NavLink></li>
+                                        <li><NavLink exact to='/1case-stadies-details'>Lifestyle</NavLink></li>
+                                        <li><NavLink exact to='/1case-stadies-details'>Travel</NavLink></li>
+                                   
+                                    </ul> 
                                 </li>
-                                <li><NavLink exact to='/blog-left'>Feature</NavLink>
+                                <li><NavLink exact to='/1blog-left'>Feature</NavLink>
                                     {/* <ul className="subMenu">
                                         <li><NavLink exact to='/blog-left'>Blog left sidebar</NavLink></li>
                                         <li><NavLink exact to='/blog-right'>Blog Right sidebar</NavLink></li>

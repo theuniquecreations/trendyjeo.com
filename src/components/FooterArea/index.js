@@ -6,28 +6,28 @@ const footerLinks = [
     {
         title: 'Quick Link', menus: [
             { name: 'Home', route: '/' },
-            { name: 'Practice Area', route: 'practice' },
-            { name: 'Our Team', route: 'team' },
-            { name: 'Recent Case', route: 'case' },
-            { name: 'Our Blog', route: 'blog' },
+            { name: 'Blog', route: 'practice' },
+            { name: 'Contact', route: 'team' },
+            { name: 'Features', route: 'case' },
+          
         ]
     },
     {
-        title: 'Practice Area', menus: [
-            { name: 'Family Law', route: 'home' },
-            { name: 'Criminal Law', route: 'home' },
-            { name: 'Parsonal Injury', route: 'home' },
-            { name: 'Real Estate Law', route: 'home' },
-            { name: 'Business Law', route: 'home' },
+        title: 'Blog Area', menus: [
+            { name: 'Photography', route: 'home' },
+            { name: 'Food', route: 'home' },
+            { name: 'Travell', route: 'home' },
+            { name: 'Fun', route: 'home' },
+            
         ]
     },
     {
-        title: 'Contact Us', menus: [
-            { name: 'Head Office Address' },
-            { name: '121 King Street, Melbourne West,', },
-            { name: 'Australia', },
-            { name: 'Phone: 888 123-4587', },
-            { name: 'Email: info@example.com', },
+        title: 'Contact me', menus: [
+            { name: 'www.instagram.com/thedreamyfad' },
+            { name: 'www.facebook.com/thedreamyfad', },
+            { name: 'www.linkedin.com/thedreamyfad', },
+            { name: 'www.twitter.com/thedreamyfad', },
+            { name: 'Email: thedreamyfad@gmail.com', },
         ]
     },
 ]
@@ -43,7 +43,7 @@ const FooterArea = () => {
                                 <Link to="/">
                                    <h1>Dreamy Fad</h1>
                                 </Link>
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
+                                <p>Out of the blue,thousands of thoughts 💭 pops up..Budding Photographer 📸! Makeup artist👩🏻‍🦰 ! IT student⌨️! Active socialist! Craziee 🤪! Scribbler too! Positivity spreader! Explorer🌌! Cuisiner ! When I try to put this in a sentence its harder to explain what I feel🎖! What I need! And what I’m focusing on exactly! </p>
                             </div>
                         </div>
                         {footerLinks.map((menu, i) => (
@@ -65,14 +65,13 @@ const FooterArea = () => {
                 <div className="container">
                     <div className="footerBottomContent">
                         <div className="row">
-                            <div className="col-md-8 col-sm-10 col-12">
-                                <span>Privacy Policy | © 2018 Barristar. All rights reserved</span>
+                            <div className="col-md-8 col-sm-10 col-12 ">
+                                <span className="small">Privacy Policy | ©  {new Date().getFullYear()} Developed by <a href="https://www.instagram.com/theuniquecreations" target="blank">TheUniqueCreations</a></span>
                             </div>
                             <div className="col-md-4 col-sm-2 col-12">
                                 <ul className="socialListFooter">
-                                    <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                  
+                                    <li><a href="https://www.instagram.com/theuniquecreations" className="text-white" target="blank"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
                         </div>

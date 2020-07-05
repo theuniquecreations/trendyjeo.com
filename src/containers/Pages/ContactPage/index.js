@@ -19,31 +19,31 @@ const ContactPage = () => {
     return (
         <Fragment>
             <header className="headerArea">
-                <HeaderTop className="headerTop" />
+                {/* <HeaderTop className="headerTop" /> */}
                 <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
             </header>
-            <Breadcumb
+            {/* <Breadcumb
                 className="breadcumbArea"
                 title="Contact"
                 breadcumbMenu={breadcumbMenu}
                 background={breadcumb}
-            />
+            /> */}
 
-            <div className="contactusPageArea">
+            <div className="contactusPageArea ">
                 <div className="container">
+                <br/>
+                <br/>
                     <div className="row">
                         <div className="col-lg-5">
-                            <div className="contactUsInfo">
-                                <h3>Our Contacts</h3>
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                                </p>
-                                <h4>Address</h4>
-                                <span>245 King Street, Touterie Victoria 8520 Australia</span>
+                          
+                            <div className="contactUsInfo mt-10">
+                                <h3>Contact me</h3>
+                                
                                 <h4>Phone</h4>
                                 <span>0-123-456-7890</span>
                                 <span>0-123-456-7890</span>
                                 <h4>Email</h4>
-                                <span>sample@gmail.com</span>
+                                <span>thedreamyfad@gmail.com</span>
                             </div>
                         </div>
                         <div className="col-lg-7">
@@ -58,9 +58,9 @@ const ContactPage = () => {
                 </div>
             </div>
 
-            <NewsLetter
+            {/* <NewsLetter
                 className="newsLetterArea"
-            />
+            /> */}
             <FooterArea />
         </Fragment>
     )
