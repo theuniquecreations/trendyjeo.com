@@ -29,11 +29,11 @@ class HeroSlider extends Component {
                             <div className="container">
                                 <div className="row">
                                     <div className="col col-lg-8">
-                                        <p>{slider.text}</p>
+                                        {/* <p>{slider.text}</p> */}
                                         <h2><span>{slider.title}</span> <span>{slider.subTitle}</span></h2>
-                                        <div className="btnStyle btnStyle3">
+                                        {/* <div className="btnStyle btnStyle3">
                                             <a href="#">{slider.button}</a>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

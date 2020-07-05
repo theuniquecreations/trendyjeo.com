@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 
 import { Provider } from 'react-redux'
 import store from './store'
-import './index.scss';
+import './index1.scss';
 const app = (
     <Provider store={store}>
         <App />

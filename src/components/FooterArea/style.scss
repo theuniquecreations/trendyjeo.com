@@ -1,5 +1,12 @@
 .footerArea{
-    background: #151a30;
+    h1{
+        color: white;
+        font-family: "Dancing Script", cursive !important;
+        font-size: 30px;
+        padding-bottom: none !important;
+        margin-bottom: none !important;
+    }
+    background: #A30047;
     .footerTopArea{
         padding: 100px 0px 70px;
         .footerLogo{
@@ -36,7 +43,7 @@
                         color: #ddd;
                         display: inline-block;
                         &:hover{
-                            color: #c0b596;
+                            color: #FFBEEF;
                         }
                     }
                 }

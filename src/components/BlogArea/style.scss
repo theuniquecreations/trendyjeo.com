@@ -45,7 +45,7 @@
                     color: #000;
                     transition: all .3s;
                     &:hover{
-                        color: #c0b596;
+                        color: #A30047;
                     }
                 }
             }
@@ -54,7 +54,7 @@
                     li{
                         display: inline-block;
                         padding: 0 10px;
-                        color: #c0b596;
+                        color: #A30047;
                         @media (max-width:576px) {
                             padding:0 5px;
                         }
@@ -71,7 +71,7 @@
                             &::before{
                                 content: "|";
                                 margin-right: 10px;
-                                color: #ccc;
+                                color: #A30047;
                                 @media (max-width:576px) {
                                     margin-right: 5px;
                                 }

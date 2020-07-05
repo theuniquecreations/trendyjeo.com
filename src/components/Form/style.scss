@@ -15,22 +15,22 @@
             &:focus{
                 -webkit-box-shadow: none;
                 box-shadow: none;
-                border-color: #c0b596;
+                border-color: #FFBEEF;
             }
             &::-webkit-input-placeholder{
-                color: #bbb5a5;
+                color: #FFBEEF;
                 font-size: 14px;
             }
         }
         select{
-            color: #bbb5a5;
+            color: #ffffff;
             position: relative;
             -webkit-appearance: none;
             -ms-appearance: none;
             -o-appearance: none;
             appearance: none;
             -moz-appearance: none;
-            background: rgb(72, 70, 76) url(../../images/select-icon.png) no-repeat calc(100% - 15px) center;
+            background: #FFBEEF url(../../images/select-icon.png) no-repeat calc(100% - 15px) center;
         }
         textarea{
             height: 150px;
@@ -39,22 +39,23 @@
         p{
             text-transform: uppercase;
             font-size: 12px;
-            color: #c0b596;
+            color: #ffffff;
         }
     }
     
     button{
         font-size: 15px;
         font-weight: 700;
-        color: #fff;
+        color: #A30047;
         padding: 9px 25px;
+        border-radius: 3px;
         border: 2px solid transparent;
         text-transform: capitalize;
         display: inline-block;
         transition: all .3s;
-        background: #c0b596;
+        background: #ffffff;
         &:hover{
-            background:#d4c291;
+            background:#ecc5fc;
         }
     }
 }

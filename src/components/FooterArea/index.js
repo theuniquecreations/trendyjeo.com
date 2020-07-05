@@ -41,7 +41,7 @@ const FooterArea = () => {
                         <div className="col-lg-3 col-md-6 col-sm-6">
                             <div className="footerLogo">
                                 <Link to="/">
-                                    <img src={logo} alt="" />
+                                   <h1>Dreamy Fad</h1>
                                 </Link>
                                 <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature</p>
                             </div>

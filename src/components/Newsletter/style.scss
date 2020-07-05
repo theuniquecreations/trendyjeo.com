@@ -1,6 +1,6 @@
 .newsLetterArea{
     padding: 74px 0 80px;
-    background: #272c3f;
+    background: #C6005D;
     .newsletterWrap{
         max-width: 443px;
         margin: auto;
@@ -9,7 +9,7 @@
             font-size: 30px;
             font-weight: 500;
             margin-bottom: 40px;
-            color: #c0b596;
+            color: #FFBEEF;
         }
         .newsletterForm{
             position: relative;
@@ -22,12 +22,13 @@
                 border: 0;
                 -webkit-box-shadow: none;
                 box-shadow: none;
-                border: 1px solid rgb(192, 181, 150);
+                border: 1px solid rgb(255, 255, 255);
             }
             button{
-                background: rgba(192, 181, 150,1);
-                color: #fff;
+                background: #ffffff;
+                color: #a30047;
                 border: 0;
+                border-radius: 0 , 3px, 0, 3px;
                 outline: 0;
                 position: absolute;
                 right: 0;

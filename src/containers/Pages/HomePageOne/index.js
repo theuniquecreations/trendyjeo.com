@@ -23,6 +23,7 @@ import portfolio2 from '../../../images/studies/2.jpg'
 import portfolio3 from '../../../images/studies/3.jpg'
 import portfolio4 from '../../../images/studies/4.jpg'
 import portfolio5 from '../../../images/studies/5.jpg'
+import BlogPost from '../../../components/BlogPost'
 
 const aboutText = [
     { text: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at ,' },
@@ -32,15 +33,15 @@ const aboutText = [
 const heroSliders = [
     {
         images: 'slideWrapperOne',
-        title: 'We Fight For Your Justice',
-        subTitle: 'As Like A Friend.',
+        title: 'Text 1',
+        subTitle: 'Sub',
         text: 'The Most Talented Law Frim',
         button: 'Contact us now'
     },
     {
         images: 'slideWrapperTwo',
-        title: 'We Fight For Your Justice',
-        subTitle: 'As Like A Friend.',
+        title: 'Text 1',
+        subTitle: 'Sub',
         text: 'The Most Talented Law Frim',
         button: 'Contact us now'
     },
@@ -91,53 +92,56 @@ const HomePageOne = () => {
     return (
         <Fragment>
             <header className="headerArea">
-                <HeaderTop className="headerTop" />
+                {/* <HeaderTop className="headerTop" /> */}
                 <HeaderBotton className="headerBottomArea" />
             </header>
             <HeroSlider 
                 sliders={heroSliders}
                 className="heroSliderArea" />
             <Service className="serviceArea" />
-            <About
+           
+              <BlogArea
+                className="blogArea"
+                title="Latest Post"
+                subTitle="From Our Blog
+                "
+            />
+            <BlogPost/>
+             <About
                 className="aboutArea"
                 title="About Us"
                 images={about}
                 signature={signature}
                 pragraphs={aboutText}
             />
-            <ServiceArea
+            {/* <ServiceArea
                 className="ourServiceArea"
                 title="How Can We Help You"
                 subTitle="Area Of Practice"
                 services={services}
-            />
-            <Portfolio
+            /> */}
+            {/* <Portfolio
                 className="portfolioArea"
                 title="Our Resent Case Studies"
                 subTitle="Here Our Best Work"
                 portfolioItem={portfolioItem}
-            />
-            <Testmonial
+            /> */}
+            {/* <Testmonial
                 className="testmonialArea"
-            />
+            /> */}
             <ContactArea
                 className="contactArea"
             />
-            <TeamMember
+            {/* <TeamMember
                 title="Qualified Attorneys "
                 subTitle="Meet Our Experts"
                 className="teamArea"
                 slider={true}
-            />
-            <CounterArea
+            /> */}
+            {/* <CounterArea
                 className="counterArea"
-            />
-            <BlogArea
-                className="blogArea"
-                title="Latest News"
-                subTitle="From Our Blog
-                "
-            />
+            /> */}
+          
             <NewsLetter
                 className="newsLetterArea"
             />
