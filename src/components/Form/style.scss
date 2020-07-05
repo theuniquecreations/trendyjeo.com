@@ -11,7 +11,7 @@
             border-radius: 0;
             -webkit-box-shadow: none;
             box-shadow: none;
-            border: 1px solid rgba(192, 181, 150, .5);
+            border: 1px solid #A30047;
             &:focus{
                 -webkit-box-shadow: none;
                 box-shadow: none;
@@ -39,7 +39,7 @@
         p{
             text-transform: uppercase;
             font-size: 12px;
-            color: #ffffff;
+            color: #A30047;
         }
     }
     
@@ -49,7 +49,7 @@
         color: #A30047;
         padding: 9px 25px;
         border-radius: 3px;
-        border: 2px solid transparent;
+        border: 2px solid #A30047;
         text-transform: capitalize;
         display: inline-block;
         transition: all .3s;

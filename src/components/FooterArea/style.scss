@@ -60,10 +60,17 @@
             span{
                 display: block;
                 color: #ddd;
-                font-size: 16px;
-                font-family: 'Playfair Display', serif;
+                font-size: 15px;
+                font-family: sans-serif;
                 @media (max-width:576px) {
                     font-size: 14px;
+                }
+                a{
+                    color: #FFBEEF;
+                }
+                a:hover{
+                    color: #fff;
+                 
                 }
             }
             .socialListFooter{

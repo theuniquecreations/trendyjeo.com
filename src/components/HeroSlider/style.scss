@@ -10,16 +10,16 @@
             height: 450px;
         }
         &.slideWrapperOne{
-            background: url(../../images/slider/slide-4.jpg)no-repeat center center / cover;
+            background: url(../../images/slider/slide-1.jpg)no-repeat center center / cover;
         }
         &.slideWrapperTwo{
-            background: url(../../images/slider/slide-5.jpg)no-repeat center center / cover;
+            background: url(../../images/slider/slide-2.jpg)no-repeat center center / cover;
         }
         &.slideWrapperThree{
-            background: url(../../images/slider/slide-22.jpg)no-repeat center center / cover;
+            background: url(../../images/slider/slide-3.jpg)no-repeat center center / cover;
         }
         &.slideWrapperFour{
-            background: url(../../images/slider/slide-1.jpg)no-repeat center center / cover;
+            background: url(../../images/slider/slide-4.jpg)no-repeat center center / cover;
         }
         .sliderContent{
             position: absolute;
@@ -132,7 +132,7 @@
         }
         
         &:hover{
-            background: #A30047;
+            background: #f09bbf;
             border-color: #fff;
             &::before{
                 color: #fff;

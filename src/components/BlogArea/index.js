@@ -46,7 +46,7 @@ const BlogArea = ({ className, title, subTitle }) => {
                                     <img src={blog.images} alt="" />
                                 </div>
                                 <div className="blogContent">
-                                    <h3><Link to="/blog-fullwidth">Justice May For You If  You Are Innocent</Link></h3>
+                                    <h3><Link to="/blog-fullwidth">Title</Link></h3>
                                     <ul className="blogMeta">
                                         <li><img src={blog.meta.avatar} alt="" /></li>
                                         <li>{blog.meta.name}</li>

@@ -26,23 +26,23 @@ import portfolio5 from '../../../images/studies/5.jpg'
 import BlogPost from '../../../components/BlogPost'
 
 const aboutText = [
-    { text: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at ,' },
-    { text: 'and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum' },
+    { text: 'When someone ask me this…”tell me about yourself”? Pause……Out of the blue,thousands of thoughts 💭 pops up..Budding Photographer 📸! Makeup artist👩🏻‍🦰 ! IT student⌨️! Active socialist! Craziee 🤪! Scribbler too! Positivity spreader! Explorer🌌! Cuisiner ! When I try to put this in a sentence its harder to explain what I feel🎖! What I need! And what I’m focusing on exactly! But lemme make it simple! ' },
+    { text: 'This is Gayathri ! Trying to find out my cup of tea 🛤! Make some time so that you can talk with me walking through my ups and downs 🎡 ! You can taste my 🥘{No Promises🤞🏻} ! We can explore together I hope 🤿and we all can have a cherishable journey🎢!! Shall we start ?' },
 ]
 
 const heroSliders = [
     {
         images: 'slideWrapperOne',
-        title: 'Text 1',
-        subTitle: 'Sub',
+        title: 'Food',
+        subTitle: '',
         text: 'The Most Talented Law Frim',
         button: 'Contact us now'
     },
     {
         images: 'slideWrapperTwo',
-        title: 'Text 1',
-        subTitle: 'Sub',
-        text: 'The Most Talented Law Frim',
+        title: 'Food',
+        subTitle: '',
+        text: 'Lets Review it',
         button: 'Contact us now'
     },
 ]
@@ -106,12 +106,12 @@ const HomePageOne = () => {
                 subTitle="From Our Blog
                 "
             />
-            <BlogPost/>
+           
              <About
                 className="aboutArea"
-                title="About Us"
+                title="About"
                 images={about}
-                signature={signature}
+               // signature={signature}
                 pragraphs={aboutText}
             />
             {/* <ServiceArea
@@ -142,9 +142,9 @@ const HomePageOne = () => {
                 className="counterArea"
             /> */}
           
-            <NewsLetter
+            {/* <NewsLetter
                 className="newsLetterArea"
-            />
+            /> */}
             <FooterArea/>
         </Fragment>
     )
