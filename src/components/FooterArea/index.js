@@ -6,9 +6,9 @@ const footerLinks = [
     {
         title: 'Quick Link', menus: [
             { name: 'Home', route: '/' },
-            { name: 'Blog', route: 'practice' },
-            { name: 'Contact', route: 'team' },
-            { name: 'Features', route: 'case' },
+            { name: 'Blog', route: '/' },
+            { name: 'Contact', route: '/' },
+            { name: 'Features', route: '/' },
           
         ]
     },
