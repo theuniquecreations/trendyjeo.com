@@ -22,43 +22,7 @@ const aboutText = [
     { text: 'and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum' },
 ]
 
-const services = [
-    {
-        icon: 'flaticon-parents',
-        title: 'Family Law',
-        content: 'There are many variations of passages of Lorem '
-    },
-    {
-        icon: 'flaticon-wounded',
-        title: 'Personal Injury',
-        content: 'There are many variations of passages of Lorem '
-    },
-    {
-        icon: 'flaticon-employee',
-        title: 'Business Law',
-        content: 'There are many variations of passages of Lorem '
-    },
-    {
-        icon: 'flaticon-thief',
-        title: 'Criminal Law',
-        content: 'There are many variations of passages of Lorem '
-    },
-    {
-        icon: 'flaticon-university-graduate-hat',
-        title: 'Education Law',
-        content: 'There are many variations of passages of Lorem '
-    },
-    {
-        icon: 'flaticon-house',
-        title: 'Real Estate Law',
-        content: 'There are many variations of passages of Lorem '
-    },
-]
 
-const breadcumbMenu = [
-    {name:'Home',route:'/'},
-    {name:'About us'}
-]
 
 const AboutPage = () => {
     return (
@@ -67,50 +31,20 @@ const AboutPage = () => {
                 {/* <HeaderTop className="headerTop" /> */}
                 <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
             </header>
-            <Breadcumb 
-                className="breadcumbArea"
-                title="About Us"
-                breadcumbMenu={breadcumbMenu}
-                background={breadcumb}
-            />
-            <Service className="serviceArea mt-0" />
             <About
-                className="aboutArea aboutAreaStyleTwo"
-                title="Why You Need Us"
-                subTitle="We Are Expert"
+                className="aboutArea"
+                title="About"
                 images={about}
-                orderLast="order-last"
-                videoId="XxVg_s8xAms"
+               // signature={signature}
                 pragraphs={aboutText}
-            />
-            <ServiceArea
-                className="ourServiceArea ourServiceAreaStyleTwo"
-                title="How Can We Help You"
-                subTitle="Area Of Practice"
-                services={services}
-            />
-            <Testmonial
-                className="testmonialArea pt100"
-            />
-            <CounterArea
-                fullWidth={true}
-                className="counterArea counterAreaStyleTwo"
-            />
-            <TeamMember
-                title="Qualified Attorneys "
-                subTitle="Meet Our Experts"
-                className="teamArea"
-                slider={true}
             />
             <BlogArea
                 className="blogArea"
-                title="Latest News"
+                title="Latest Post"
                 subTitle="From Our Blog
                 "
             />
-            <NewsLetter
-                className="newsLetterArea"
-            />
+          
             <FooterArea/>
         </Fragment>
     )

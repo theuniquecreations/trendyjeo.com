@@ -106,14 +106,14 @@ const HomePageOne = () => {
                 subTitle="From Our Blog
                 "
             />
-           
+           <section id='about'>
              <About
                 className="aboutArea"
                 title="About"
                 images={about}
                // signature={signature}
-                pragraphs={aboutText}
-            />
+               // pragraphs={aboutText}
+            /></section>
             {/* <ServiceArea
                 className="ourServiceArea"
                 title="How Can We Help You"
