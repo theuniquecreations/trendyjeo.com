@@ -16,6 +16,7 @@ import FooterArea from '../../../components/FooterArea'
 // images
 import about from '../../../images/about/2.jpg'
 import signature from '../../../images/about/1.png'
+import axios from 'axios';
 
 // images
 import portfolio1 from '../../../images/studies/1.jpg'
@@ -87,9 +88,34 @@ const portfolioItem = [
     { images: portfolio4, title: 'Accounting issue', subtitle: 'Criminal' },
     { images: portfolio5, title: 'Business Accounting', subtitle: 'Family Issue' }
 ]
-
-const HomePageOne = () => {
-    return (
+function HomePageOne() {
+    const [responseData, setResponseData] = React.useState([]);
+   
+    React.useEffect(() => {
+        axios({
+            "method": "GET",
+            "url": "https://tucservices.azurewebsites.net/api/DynamoDB/GetItems?website=dreamyfad.com",
+            "headers": {
+              "content-type": "application/json",
+              "x-access-key": "tucblog101289101289",
+              "x-access-token": "tucblog101289101289"
+            }, "params": {
+              "language_code": "en"
+            }
+          })
+          .then((response) => {
+            setResponseData(response.data.items)
+       
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+    }, [])
+    console.log((responseData))
+  
+    
+    return ( 
+   
         <Fragment>
             <header className="headerArea">
                 {/* <HeaderTop className="headerTop" /> */}
@@ -103,8 +129,8 @@ const HomePageOne = () => {
               <BlogArea
                 className="blogArea"
                 title="Latest Post"
-                subTitle="From Our Blog
-                "
+                subTitle="From Our Blog"
+                post={responseData}
             />
            <section id='about'>
              <About
