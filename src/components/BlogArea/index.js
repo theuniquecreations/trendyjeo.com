@@ -1,17 +1,20 @@
-import React from 'react'
+//import React from 'react'
 import SectionTitle from '../Title'
 import { Link } from 'react-router-dom'
 import './style.scss'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
 
 // images
-import blog1 from '../../images/blog/1.jpg'
+import defaultimg from '../../images/blog/D.png'
 import blog2 from '../../images/blog/2.jpg'
 import blog3 from '../../images/blog/3.jpg'
-import avatar from '../../images/blog-page/6.jpg'
+import avatar from '../../images/about/2.jpg'
 
 const blogs = [
     {
-        images: blog1, title: 'Justice May For You If You Are Innocent', meta: {
+        images: defaultimg, title: 'Justice May For You If You Are Innocent', meta: {
             avatar: avatar, name: 'By Aliza', time: 'Oct 12,2018'
         }
     },
@@ -27,8 +30,10 @@ const blogs = [
     },
 ]
 
-
-const BlogArea = ({ className, title, subTitle }) => {
+const BlogArea = ({ className, title, subTitle, post}) => {
+    console.log("blog area",post)
+    console.log("blog area",blogs)
+//const BlogArea = ({ className, title, subTitle }) => {
     return (
         <div className={className}>
             <div className="container">
@@ -39,18 +44,18 @@ const BlogArea = ({ className, title, subTitle }) => {
                             subTitle={subTitle}
                         />
                     </div>
-                    {blogs.map((blog, i) => (
+                    {post.map((blog, i) => (
                         <div key={i} className="col-lg-4 col-sm-6 col-12" >
                             <div className="blogWrap">
                                 <div className="blogImage">
-                                    <img src={blog.images} alt="" />
+                                    <img src={defaultimg} alt="" />
                                 </div>
                                 <div className="blogContent">
-                                    <h3><Link to="/blog-fullwidth">Title</Link></h3>
+                                    <h3><Link to="/blog-fullwidth">{blog.postTitle}</Link></h3>
                                     <ul className="blogMeta">
-                                        <li><img src={blog.meta.avatar} alt="" /></li>
-                                        <li>{blog.meta.name}</li>
-                                        <li>{blog.meta.time}</li>
+                                        <li><img src={avatar} alt="avator" /></li>
+                                        <li>{blog.updatedby}</li>
+                                        <li>{blog.date}</li>
                                     </ul>
                                 </div>
                             </div>

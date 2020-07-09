@@ -38,8 +38,8 @@ const HeaderBottom = props => {
                                         <li><NavLink exact to='/home-three'>Home Three</NavLink></li>
                                     </ul> */}
                                 </li>
-                                <li><NavLink exact to='/1about'>About</NavLink></li>
-                              
+                                <li><NavLink exact to='/about'>About</NavLink></li>
+                               
 
                                 <li><NavLink exact to='#'>Blog</NavLink>
                                      <ul className="subMenu">

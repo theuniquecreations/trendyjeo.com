@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom'
 import 'react-modal-video/scss/modal-video.scss'
 import './style.scss'
 
-const About = ({ subTitle, title, videoId, className, signature, pragraphs,images,orderLast }) => {
+
+const pragraphs = [
+    { text: 'When someone ask me this…”tell me about yourself”? Pause……Out of the blue,thousands of thoughts 💭 pops up..Budding Photographer 📸! Makeup artist👩🏻‍🦰 ! IT student⌨️! Active socialist! Craziee 🤪! Scribbler too! Positivity spreader! Explorer🌌! Cuisiner ! When I try to put this in a sentence its harder to explain what I feel🎖! What I need! And what I’m focusing on exactly! But lemme make it simple! ' },
+    { text: 'This is Gayathri ! Trying to find out my cup of tea 🛤! Make some time so that you can talk with me walking through my ups and downs 🎡 ! You can taste my 🥘{No Promises🤞🏻} ! We can explore together I hope 🤿and we all can have a cherishable journey🎢!! Shall we start ?' },
+]
+
+const About = ({ subTitle, title, videoId, className, signature,images,orderLast }) => {
     const [video, setVideo] = useState(false)
     return (
         <div className={className}>
