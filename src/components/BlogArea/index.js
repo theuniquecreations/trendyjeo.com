@@ -7,14 +7,14 @@ import axios from 'axios';
 
 
 // images
-import blog1 from '../../images/blog/1.jpg'
+import defaultimg from '../../images/blog/D.png'
 import blog2 from '../../images/blog/2.jpg'
 import blog3 from '../../images/blog/3.jpg'
-import avatar from '../../images/blog-page/6.jpg'
+import avatar from '../../images/about/2.jpg'
 
 const blogs = [
     {
-        images: blog1, title: 'Justice May For You If You Are Innocent', meta: {
+        images: defaultimg, title: 'Justice May For You If You Are Innocent', meta: {
             avatar: avatar, name: 'By Aliza', time: 'Oct 12,2018'
         }
     },
@@ -48,7 +48,7 @@ const BlogArea = ({ className, title, subTitle, post}) => {
                         <div key={i} className="col-lg-4 col-sm-6 col-12" >
                             <div className="blogWrap">
                                 <div className="blogImage">
-                                    <img src={blog1} alt="" />
+                                    <img src={defaultimg} alt="" />
                                 </div>
                                 <div className="blogContent">
                                     <h3><Link to="/blog-fullwidth">{blog.postTitle}</Link></h3>
