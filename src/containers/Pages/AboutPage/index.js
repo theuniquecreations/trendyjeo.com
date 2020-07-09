@@ -38,12 +38,13 @@ const AboutPage = () => {
                // signature={signature}
                 pragraphs={aboutText}
             />
-            <BlogArea
+            {/* change service to blog area and then enable it */}
+            {/* <BlogArea
                 className="blogArea"
                 title="Latest Post"
                 subTitle="From Our Blog
                 "
-            />
+            /> */}
           
             <FooterArea/>
         </Fragment>
