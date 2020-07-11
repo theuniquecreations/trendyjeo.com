@@ -50,7 +50,7 @@ const BlogArea = ({ className, title, subTitle, post}) => {
                             <div className="blogWrap">
                                 <div className="blogImage">
                                     {/* <img src={blog.image!==""?{defaultimg}:blog.image} alt="" /> */}
-                                    <img src={defaultimg} alt={blog.postTitle} />
+                                    <img src={defaultimg} alt="" />
                                 </div>
                                 <div className="blogContent">
                                     {/* <h3><Link to="/blog-fullwidth">{blog.postTitle}</Link></h3> */}
