@@ -31,8 +31,8 @@ const blogs = [
 ]
 
 const BlogArea = ({ className, title, subTitle, post}) => {
-    console.log("blog area",post)
-    console.log("blog area",blogs)
+   // console.log("blog area",post)
+   // console.log("blog area",blogs)
 //const BlogArea = ({ className, title, subTitle }) => {
     return (
         <div className={className}>
@@ -45,6 +45,7 @@ const BlogArea = ({ className, title, subTitle, post}) => {
                         />
                     </div>
                     {post.map((blog, i) => (
+                        blog.itemType === "post"?(
                         <div key={i} className="col-lg-4 col-sm-6 col-12" >
                             <div className="blogWrap">
                                 <div className="blogImage">
@@ -60,7 +61,7 @@ const BlogArea = ({ className, title, subTitle, post}) => {
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div>):""
                     ))}
                 </div>
             </div>
