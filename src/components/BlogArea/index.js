@@ -49,7 +49,8 @@ const BlogArea = ({ className, title, subTitle, post}) => {
                         <div key={i} className="col-lg-4 col-sm-6 col-12" >
                             <div className="blogWrap">
                                 <div className="blogImage">
-                                    <img src={defaultimg} alt="" />
+                                    {/* <img src={blog.image!==""?{defaultimg}:blog.image} alt="" /> */}
+                                    <img src={defaultimg} alt={blog.postTitle} />
                                 </div>
                                 <div className="blogContent">
                                     {/* <h3><Link to="/blog-fullwidth">{blog.postTitle}</Link></h3> */}
