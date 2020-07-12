@@ -99,8 +99,6 @@ function HomePageOne() {
               "content-type": "application/json",
               "x-access-key": "tucblog101289101289",
               "x-access-token": "tucblog101289101289"
-            }, "params": {
-              "language_code": "en"
             }
           })
           .then((response) => {
