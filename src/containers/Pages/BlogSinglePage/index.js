@@ -25,13 +25,13 @@ const BlogSinglePage = (post) => {
     if (post !== undefined) {
        //   console.log("undeifed check , blog single page", singlepost)
         var singlepost = post.location.query.post
-        console.log("undeifed check , blog single page", singlepost)
+       // console.log("undeifed check , blog single page", singlepost)
         localStorage.setItem("lsLastViewedPost", JSON.stringify(singlepost));
-        console.log("form ls", JSON.parse(localStorage.getItem("lsLastViewedPost")))
+        //console.log("form ls", JSON.parse(localStorage.getItem("lsLastViewedPost")))
     }
     else {
         var singlepost = JSON.parse(localStorage.getItem("lsLastViewedPost"))
-        console.log("from ls , blog single page", singlepost)
+        //console.log("from ls , blog single page", singlepost)
     }
 
     if (singlepost.id !== '') {

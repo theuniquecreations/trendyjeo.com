@@ -1,12 +1,11 @@
 import React from 'react'
-import avatarImg from '../../images/practice/4.jpg'
 
 import './style.scss'
 
 
 const SingleContentArea = ({ className, posttitle,post, image }) => {
-
-    console.log("imagew",image)
+const text={post}
+    console.log("post",post)
     return (
 
         <div className={className}>
@@ -15,7 +14,7 @@ const SingleContentArea = ({ className, posttitle,post, image }) => {
             </div>
             <div className="singleContentWrap">
                 <h3>{posttitle}</h3>
-                  <div>{post}</div>
+                  <div dangerouslySetInnerHTML={{ __html: post }} />
             </div>
         </div>
     )
