@@ -48,7 +48,7 @@ const BlogSinglePage = (post) => {
                     className="breadcumbArea"
                     title={singlepost.postTitle}
                     breadcumbMenu={breadcumbMenu}
-                    background={breadcumb}
+                    //background={breadcumb}
                 />
                 <div className="singleArea">
                     <div className="container">
