@@ -18,67 +18,73 @@ import './style.scss'
 
 const breadcumbMenu = [
     { name: 'Home', route: '/' },
-    { name: 'Practice', route: '/practice' },
-    { name: 'Practice area details' }
+    { name: 'AllPost', route: '/allposts' }
 ]
 
-
-
 const BlogSinglePage = (post) => {
-    
-    if(1===0)
-    {
-        var singlepost=post.location.query.post
+    if (post !== undefined) {
+       //   console.log("undeifed check , blog single page", singlepost)
+        var singlepost = post.location.query.post
+        console.log("undeifed check , blog single page", singlepost)
+        localStorage.setItem("lsLastViewedPost", JSON.stringify(singlepost));
+        console.log("form ls", JSON.parse(localStorage.getItem("lsLastViewedPost")))
+    }
+    else {
+        var singlepost = JSON.parse(localStorage.getItem("lsLastViewedPost"))
+        console.log("from ls , blog single page", singlepost)
+    }
+
+    if (singlepost.id !== '') {
+        //var singlepost = post.location.query.post
         //console.log("querry titlw", post.location.query)
-        console.log("querry titlw", singlepost.postTitle)
-    return (
-        <Fragment>
-            <header className="headerArea">
-                {/* <HeaderTop className="headerTop" /> */}
-                <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
-            </header>
-            {/* <Breadcumb
-                className="breadcumbArea"
-                title="Practice Single Area"
-                breadcumbMenu={breadcumbMenu}
-                background={breadcumb}
-            /> */}
-            <div className="singleArea">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-4">
-                            <aside className=" pr25">
-                                {/* <BannerSidebar
+        //console.log("querry titlw", singlepost.postTitle)
+        return (
+            <Fragment>
+                <header className="headerArea">
+                    {/* <HeaderTop className="headerTop" /> */}
+                    <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
+                </header>
+                <Breadcumb
+                    className="breadcumbArea"
+                    title={singlepost.postTitle}
+                    breadcumbMenu={breadcumbMenu}
+                    background={breadcumb}
+                />
+                <div className="singleArea">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-4">
+                                <aside className=" pr25">
+                                    {/* <BannerSidebar
                                     image={banner}
                                     className="bannerWrapper"
                                 /> */}
-                                 {/* <CetagorySidebar
+                                    {/* <CetagorySidebar
                                     title="Category"
                                     className="cetagoryWrap"
                                 />  */}
-                            </aside>
-                        </div>
-                        <div className="col-lg-12 mt-5">
-                            <SingleContentArea
-                                className="singleContentArea"
-                                image={singlepost.image}
-                                posttitle={singlepost.postTitle}
-                                post={singlepost.post}
-                            />
+                                </aside>
+                            </div>
+                            <div className="col-lg-12 mt-5">
+                                <SingleContentArea
+                                    className="singleContentArea"
+                                    image={singlepost.image}
+                                    posttitle={singlepost.postTitle}
+                                    post={singlepost.post}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            {/* <NewsLetter
+                {/* <NewsLetter
                 className="newsLetterArea"
             /> */}
-            <FooterArea />
-        </Fragment>
-    )
-        }
-        else
-        {
-            return <Redirect to="/"></Redirect>
-        }
+                <FooterArea />
+            </Fragment>
+        )
+    }
+    else {
+        return <Redirect to="/"></Redirect>
+    }
 }
 export default BlogSinglePage
