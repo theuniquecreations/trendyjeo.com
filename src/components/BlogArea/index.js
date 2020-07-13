@@ -54,8 +54,9 @@ const BlogArea = ({ className, title, subTitle, post}) => {
                                 </div>
                                 <div className="blogContent">
                                     {/* <h3><Link to="/blog-fullwidth">{blog.postTitle}</Link></h3> */}
-                                    <h3><Link to="/">{blog.postTitle}</Link></h3>
-                                    <ul className="blogMeta">
+                                    {/* <h3><Link to="/post-single">{blog.postTitle}</Link></h3> */}
+                                    <h3><Link to={{ pathname: '/post-single', query: { post: blog} }}>{blog.postTitle}</Link></h3>
+                                    <ul className="blogMeta">   
                                         <li><img src={avatar} alt="avator" /></li>
                                         <li>{blog.updatedby}</li>
                                         <li>{blog.date}</li>

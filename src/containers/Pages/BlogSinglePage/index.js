@@ -7,7 +7,7 @@ import CetagorySidebar from '../../../components/CetagorySidebar'
 import FooterArea from '../../../components/FooterArea'
 import BannerSidebar from '../../../components/BannerSidebar'
 import SingleContentArea from '../../../components/SingleContentArea'
-
+import { Redirect } from "react-router-dom";
 // images
 import breadcumb from '../../../images/breadcumb/1.jpg'
 import banner from '../../../images/practice/2.jpg'
@@ -24,49 +24,61 @@ const breadcumbMenu = [
 
 
 
-const PracticeSinglePage = () => {
+const BlogSinglePage = (post) => {
+    
+    if(1===0)
+    {
+        var singlepost=post.location.query.post
+        //console.log("querry titlw", post.location.query)
+        console.log("querry titlw", singlepost.postTitle)
     return (
         <Fragment>
             <header className="headerArea">
-                <HeaderTop className="headerTop" />
+                {/* <HeaderTop className="headerTop" /> */}
                 <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
             </header>
-            <Breadcumb
+            {/* <Breadcumb
                 className="breadcumbArea"
                 title="Practice Single Area"
                 breadcumbMenu={breadcumbMenu}
                 background={breadcumb}
-            />
+            /> */}
             <div className="singleArea">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4">
                             <aside className=" pr25">
-                                <BannerSidebar
+                                {/* <BannerSidebar
                                     image={banner}
                                     className="bannerWrapper"
-                                />
-                                <CetagorySidebar
+                                /> */}
+                                 {/* <CetagorySidebar
                                     title="Category"
                                     className="cetagoryWrap"
-                                />
+                                />  */}
                             </aside>
                         </div>
-                        <div className="col-lg-8">
+                        <div className="col-lg-12 mt-5">
                             <SingleContentArea
                                 className="singleContentArea"
-                                image={single}
-                                avatar={true}
+                                image={singlepost.image}
+                                posttitle={singlepost.postTitle}
+                                post={singlepost.post}
                             />
                         </div>
                     </div>
                 </div>
             </div>
-            <NewsLetter
+            {/* <NewsLetter
                 className="newsLetterArea"
-            />
+            /> */}
             <FooterArea />
         </Fragment>
     )
+        }
+        else
+        {
+            return <Redirect to="/"></Redirect>
+        }
 }
-export default PracticeSinglePage
+export default BlogSinglePage

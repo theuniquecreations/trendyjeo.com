@@ -6,7 +6,7 @@ import HomePageTwo from '../Pages/HomePageTwo'
 import HomePageThree from '../Pages/HomePageThree'
 import AboutPage from '../Pages/AboutPage'
 import PracticePage from '../Pages/PracticePage'
-import PracticeSinglePage from '../Pages/PracticeSinglePage'
+import BlogSinglePage from '../Pages/BlogSinglePage'
 import PortfolioPage from '../Pages/PortfolioPage'
 import SinglePortfolioPage from '../Pages/SinglePortfolioPage'
 import TeamPage from '../Pages/TeamPage'
@@ -20,7 +20,7 @@ import './App.css';
 class App extends Component {
     render() {
         return (
-            <Fragment>
+                <Fragment>
                 <BrowserRouter>
                     <ToastContainer autoClose={2500} position="top-center" />
                     <Switch>
@@ -29,7 +29,7 @@ class App extends Component {
                         <Route exact path="/home-three" component={HomePageThree} />
                         <Route exact path="/about" component={AboutPage} />
                         <Route exact path="/practice" component={PracticePage} />
-                        <Route exact path="/practice-details" component={PracticeSinglePage} />
+                        <Route exact path="/post-single" component={BlogSinglePage} />
                         <Route exact path="/case-stadies" component={PortfolioPage} />
                         <Route exact path="/case-stadies-details" component={SinglePortfolioPage} />
                         <Route exact path="/attorneys" component={TeamPage} />
