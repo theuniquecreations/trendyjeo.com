@@ -85,7 +85,7 @@ const HeaderBottom = (props) => {
                 </li>
               </ul>
             </div>
-            <div className="col-lg-1 col-md-2 col-sm-6 col-4">
+            {/* <div className="col-lg-1 col-md-2 col-sm-6 col-4">
               <div className="searchMenuWrapper">
                 <div className="searchWrap">
                   <i onClick={clickHandler} className="fa fa-search"></i>
@@ -109,7 +109,7 @@ const HeaderBottom = (props) => {
                   <span className="third"></span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
