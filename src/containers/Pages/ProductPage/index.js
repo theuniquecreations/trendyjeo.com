@@ -3,7 +3,7 @@ import HeaderBotton from "../../../components/HeaderBottom";
 import HeaderTop from "../../../components/HeaderTop";
 import Breadcumb from "../../../components/Breadcumb";
 import Service from "../../../components/Service";
-import About from "../../../components/About";
+import Products from "../../../components/Products";
 import ServiceArea from "../../../components/ServiceArea";
 import Testmonial from "../../../components/Testmonial";
 import TeamMember from "../../../components/TeamMember";
@@ -32,24 +32,9 @@ const AboutPage = () => {
   return (
     <Fragment>
       <header className="headerArea">
-        {/* <HeaderTop className="headerTop" /> */}
         <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
       </header>
-      <About
-        className="aboutArea"
-        title="About"
-        images={about}
-        // signature={signature}
-        pragraphs={aboutText}
-      />
-      {/* change service to blog area and then enable it */}
-      {/* <BlogArea
-                className="blogArea"
-                title="Latest Post"
-                subTitle="From Our Blog
-                "
-            /> */}
-
+      <Products className="aboutArea" title="About" />
       <FooterArea />
     </Fragment>
   );
