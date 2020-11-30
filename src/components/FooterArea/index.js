@@ -1,34 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo/logo.png";
+//import logo from "../../images/logo/logo.png";
 import "./style.scss";
 const footerLinks = [
   {
     title: "Quick Link",
     menus: [
       { name: "Home", route: "/" },
-      { name: "Blog", route: "/" },
+      { name: "Products", route: "/" },
       { name: "Contact", route: "/" },
-      { name: "Features", route: "/" },
     ],
   },
   {
-    title: "Blog Area",
+    title: "Products",
     menus: [
-      { name: "Photography", route: "home" },
-      { name: "Food", route: "home" },
-      { name: "Travell", route: "home" },
-      { name: "Fun", route: "home" },
+      { name: "Handmade", route: "products" },
+      { name: "Pillow", route: "products" },
+      { name: "Cup", route: "products" },
+      { name: "Custom", route: "products" },
     ],
   },
   {
     title: "Contact me",
     menus: [
-      { name: "www.instagram.com/thedreamyfad" },
-      { name: "www.facebook.com/thedreamyfad" },
-      { name: "www.linkedin.com/thedreamyfad" },
-      { name: "www.twitter.com/thedreamyfad" },
-      { name: "Email: thedreamyfad@gmail.com" },
+      { name: "www.instagram.com/trendyjeo" },
+      { name: "www.facebook.com/trendyjeo" },
+      { name: "Email: treandyjep@gmail.com" },
     ],
   },
 ];
@@ -45,12 +42,7 @@ const FooterArea = () => {
                   <h1>Trendy Jeo</h1>
                 </Link>
                 <p>
-                  Out of the blue,thousands of thoughts 💭 pops up..Budding
-                  Photographer 📸! Makeup artist👩🏻‍🦰 ! IT student⌨️! Active
-                  socialist! Craziee 🤪! Scribbler too! Positivity spreader!
-                  Explorer🌌! Cuisiner ! When I try to put this in a sentence
-                  its harder to explain what I feel🎖! What I need! And what I’m
-                  focusing on exactly!{" "}
+                  Description Description Description Description Description
                 </p>
               </div>
             </div>
