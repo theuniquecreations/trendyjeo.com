@@ -14,13 +14,20 @@ import axios from "axios";
 const heroSliders = [
   {
     images: "slideWrapperOne",
-    title: "Hand Made",
+    title: "",
     subTitle: "",
     text: "The Most Talented Law Frim",
     button: "Contact us now",
   },
   {
     images: "slideWrapperTwo",
+    title: "Handmade",
+    subTitle: "",
+    text: "Lets Review it",
+    button: "Contact us now",
+  },
+  {
+    images: "slideWrapperThree",
     title: "Crafts",
     subTitle: "",
     text: "Lets Review it",
@@ -100,6 +107,7 @@ function HomePageOne() {
       <SectionTitle title="Our Products" />
 
       <Cards />
+      <SectionTitle title="Contact us : +91-9876543290" />
       <FooterArea />
     </Fragment>
   );
