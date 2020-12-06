@@ -12,7 +12,7 @@ function Appps() {
     const file = e.target.files[0];
     const storageRef = app.storage().ref();
     const fileRef = storageRef.child(file.name);
-    await fileRef.put(file);
+    await fileRef.put(file);  
     setFileUrl(await fileRef.getDownloadURL());
   };
 

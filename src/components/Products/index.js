@@ -66,10 +66,10 @@ function Appps() {
 </header>
 <div className="contactusPageArea ">
   <div className="container row">
-  <div className="row">
+
   <div key={user.name} >
              
-              <img width="350" height="400" src={user.avatar} alt={user.name} />
+              <img width="250" height="300" src={user.avatar} alt={user.name} />
               
              <h1>{user.name}</h1>
               <p>Rs..{user.phno}</p>
@@ -77,7 +77,7 @@ function Appps() {
             
             </div>
             </div>
-  </div>
+ 
 </div>
 </>
           );
