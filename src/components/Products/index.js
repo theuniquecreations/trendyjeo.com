@@ -1,8 +1,13 @@
 
 import React, { useEffect } from "react";
-import { app } from "../../scripts/fbase";
+import { app } from "../scripts/fbase";
 import FooterArea from "../FooterArea";
 import "./style.scss";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Checkout from '../Payment/checkout';
+
+
+
 const db = app.firestore();
 
 function Appps() {
@@ -60,27 +65,22 @@ function Appps() {
       <ul>
         {users.map((user) => {
           return (
-            
-<>
-<header className="headerArea">
-</header>
-<div className="contactusPageArea ">
-  <div className="container row">
+				<>
+					<header className="headerArea"></header>
+					<div className="contactusPageArea ">
+						<div className="container row">
+							<div key={user.name}>
+								<img width="250" height="300" src={user.avatar} alt={user.name} />
 
-  <div key={user.name} >
-             
-              <img width="250" height="300" src={user.avatar} alt={user.name} />
-              
-             <h1>{user.name}</h1>
-              <p>Rs..{user.phno}</p>
-              {/* <button onClick={deleteTodo}>Delete</button> */}
-            
-            </div>
-            </div>
- 
-</div>
-</>
-          );
+								<h1>{user.name}</h1>
+								<p>Rs..{user.phno}</p>
+								{/* <button onClick={deleteTodo}>Delete</button> */}
+								<Route path="/Checkout" component={Checkout} />
+							</div>
+						</div>
+					</div>
+				</>
+			);
         })}
       </ul>
     </>

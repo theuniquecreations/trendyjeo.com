@@ -19,7 +19,7 @@ const Card = props => {
                   <h4 className="card-title">{props.title}</h4>
                 <p className="card-text text-secondary"> {props.des} </p>
                 {/* <a href="#" className="btn btn-outline-success">More Items</a> */}
-                <Link to="/products" className="btn btn-outline-success">item</Link>
+                <Link to="/products" className="btn btn-outline-success">More Products</Link>
                 {/* <Link to="/products" className="btn btn-outline-success">More Items</Link> */}
             </div>
         </div>

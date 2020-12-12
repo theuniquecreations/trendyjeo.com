@@ -1,7 +1,7 @@
 
 import React, { useEffect } from "react";
 import { app } from "../scripts/fbase";
-
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
 
 function Appps() {
@@ -60,17 +60,20 @@ function Appps() {
       <ul>
         {users.map((user) => {
           return (
-            <div key={user.name} className="row">
-              <div>
-              <img width="100" height="100" src={user.avatar} alt={user.name} /><br></br><h1>---</h1>
-              </div>
-             <div>
-             <h1>{user.name}</h1>
-              <p>Rs..{user.phno}</p>
-              {/* <button onClick={deleteTodo}>Delete</button> */}
-             </div>
-            </div>
-          );
+				<div key={user.name} className="row">
+					<div>
+						<img width="100" height="100" src={user.avatar} alt={user.name} />
+						<br></br>
+						<h1>---</h1>
+					</div>
+					<div>
+						<h1>{user.name}</h1>
+						<p>Rs..{user.phno}</p>
+					 
+						{/* <button onClick={deleteTodo}>Delete</button> */}
+					</div>
+				</div>
+			);
         })}
       </ul>
     </>
