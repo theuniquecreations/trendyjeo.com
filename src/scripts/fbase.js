@@ -12,9 +12,9 @@ export const app = firebase.initializeApp({
     messagingSenderId: "160581850232",
     appId: "1:160581850232:web:f9ad0d7058f9212211498d",
     measurementId: "G-LZ48FFFS4P"
-});
+});  
  
-
+  
 /*import firebase from 'firebase';
 
 const firebaseConfig = {

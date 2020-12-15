@@ -1,6 +1,6 @@
 
 import React, { useEffect } from "react";
-import { app } from "../scripts/fbase";
+import { app } from "../../scripts/fbase";
 import FooterArea from "../FooterArea";
 import "./style.scss";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -75,7 +75,8 @@ function Appps() {
 								<h1>{user.name}</h1>
 								<p>Rs..{user.phno}</p>
 								{/* <button onClick={deleteTodo}>Delete</button> */}
-								<Route path="/Checkout" component={Checkout} />
+								{/* <Route path="/Checkout" component={Checkout} /> */}
+                <Link to="/Checkout" className="btn btn-outline-success">Buy Now</Link>
 							</div>
 						</div>
 					</div>

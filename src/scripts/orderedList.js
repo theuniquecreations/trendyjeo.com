@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { app } from '../../scripts/fbase';
+import { app } from "../scripts/fbase";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
 
-function Checkout() {
+function Order() {
 	const [fileUrl, setFileUrl] = React.useState(null);
 	const [users, setUsers] = React.useState([]);
 
@@ -52,7 +52,7 @@ function Checkout() {
 
 	return (
 		<>
-			<form onSubmit={onSubmit}>
+			{/* <form onSubmit={onSubmit}>
 				<input type="file" onChange={onFileChange}/>
 				<br></br>
 				 <select name="select">
@@ -72,23 +72,23 @@ function Checkout() {
 				<br></br>
 				<button>Submit</button>
 				<br></br>
-			</form>
+			</form> */}
+            <br></br>
 			<ul>
 				{users.map((user) => {
 					return (
 						<div key={user.name} className="row">
 							<div>
-								{/* <img width="100" height="100" src={user.avatar} alt={user.name} />
+								 <img width="100" height="160" src={user.avatar} alt={user.name} />
 								<br></br>
-								<h1>---</h1> */}
+								<h1>--------</h1> 
 							</div>
 							<div>
-								{/* <h1>{user.name}</h1>
-								<p>Rs..{user.phno}</p> */}
-								{/* <Link to="/products" className="btn btn-outline-success">
-									item
-								</Link> */}
-								{/* <button onClick={deleteTodo}>Delete</button> */}
+								  <h1>{user.name}</h1>
+								<p>Ph.No: {user.phno}</p>  
+                                <p> Address: {user.address}</p>  
+                                <p>Order-Type: {user.type}</p>  
+							  
 							</div>
 						</div>
 					);
@@ -99,4 +99,4 @@ function Checkout() {
 	);
 }
 
-export default Checkout;
+export default Order;

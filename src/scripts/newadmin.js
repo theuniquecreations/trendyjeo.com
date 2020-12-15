@@ -50,13 +50,19 @@ function Appps() {
 
   return (
     <>
+    <div>
+     <Link to="/Order" className="btn btn-outline-success">See User Ordered List</Link>
+     </div>
       <form onSubmit={onSubmit}>
         <input type="file" onChange={onFileChange} /><br></br>
         <input type="text" name="username" placeholder="Name" /><br></br>
      
         <input type="text" name="phno" placeholder="Rs." /><br></br>
         <button>Submit</button><br></br>
-      </form>
+      </form><br></br>
+      <br></br> 
+     
+       
       <ul>
         {users.map((user) => {
           return (
@@ -75,7 +81,10 @@ function Appps() {
 				</div>
 			);
         })}
-      </ul>
+      </ul> 
+       
+      
+      
     </>
   );
 }
