@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import firebase from "../scripts/fbase";
 import { v4 as uuid } from "uuid";
+import { Button } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 
 export default function UploadImage() {
   const [imageUrl, setImageUrl] = useState([]);
@@ -41,8 +43,31 @@ export default function UploadImage() {
 
   return (
     <div>
-      <h1>Upload image</h1>
-      <input type="file" accept="image/*" onChange={readImages} />
+       <h1>Upload image</h1> 
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6">
+            <Form>
+              
+
+               
+              
+              
+
+              <Form.Group controlId="formcaet">
+                <Form.File id="formcheck-api-regular">
+                   <Form.File.Label>Select Image</Form.File.Label>  
+                  <Form.File.Input accept="image/*" onChange={readImages} />
+                </Form.File>
+              </Form.Group>
+
+               
+            </Form>
+          </div>
+           
+        </div>
+      </div>
+       
       <h4></h4>
 
       {imageUrl
@@ -50,6 +75,7 @@ export default function UploadImage() {
             return (
               <div key={id}>
                 <img src={url} alt="" height="200px" width="200px" />
+                
                 <h3></h3>
                 <button onClick={() => deleteImage(id)}>Delete</button>
                 <h2>----</h2>
@@ -57,7 +83,8 @@ export default function UploadImage() {
             );
           })
         : ""}
-      {/* <img src={imageUrl} alt=""/> */}
+   <img src={imageUrl} alt=""/>  
     </div>
   );
 }
+*/
