@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { app } from "../scripts/fbase";
+import { app } from '../../scripts/fbase';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
 
-function Order() {
+function PayOnDelivery() {
 	const [fileUrl, setFileUrl] = React.useState(null);
 	const [users, setUsers] = React.useState([]);
 
@@ -21,22 +21,25 @@ function Order() {
 		const phno = e.target.phno.value;
 		const address = e.target.address.value;
 		const select = e.target.select.value;
+		 
 		if (!username || !phno || !fileUrl) {
 			return;
 		}
 
-		await db.collection('UserData').doc(username).set({
+		await db.collection('payondelivery').doc(username).set({
 			name: username,
 			avatar: fileUrl,
 			phno: phno,
 			address:address,
 			type:select,
+		 
 		});
+
 	};
 
 	useEffect(() => {
 		const fetchUsers = async () => {
-			const usersCollection = await db.collection('UserData').get();
+			const usersCollection = await db.collection('payondelivery').get();
 			setUsers(
 				usersCollection.docs.map((doc) => {
 					return doc.data();
@@ -46,13 +49,13 @@ function Order() {
 		fetchUsers();
 	}, []);
 	const deleteTodo = async (e) => {
-		const todoRef = db.database().ref('UserData').child(users.id);
+		const todoRef = db.database().ref('payondelivery').child(users.id);
 		todoRef.remove();
 	};
 
 	return (
 		<>
-			{/* <form onSubmit={onSubmit}>
+			<form onSubmit={onSubmit}>
 				<input type="file" onChange={onFileChange}/>
 				<br></br>
 				 <select name="select">
@@ -68,27 +71,28 @@ function Order() {
 				<input type="text" name="phno" placeholder="Number" />
 				<br></br>
 				<input type="text" name="address" placeholder="Address with pin" />
-
+                <br></br>
+				  
 				<br></br>
 				<button>Submit</button>
 				<br></br>
-			</form> */}
-            <br></br>
+			</form>
 			<ul>
 				{users.map((user) => {
 					return (
 						<div key={user.name} className="row">
 							<div>
-								 <img width="100" height="160" src={user.avatar} alt={user.name} />
+								{/* <img width="100" height="100" src={user.avatar} alt={user.name} />
 								<br></br>
-								<h1>--------</h1> 
+								<h1>---</h1> */}
 							</div>
 							<div>
-								  <h1>{user.name}</h1>
-								<p>Ph.No: {user.phno}</p>  
-                                <p> Address: {user.address}</p>  
-                                <p>Order-Type: {user.type}</p>  
-							  
+								{/* <h1>{user.name}</h1>
+								<p>Rs..{user.phno}</p> */}
+								{/* <Link to="/products" className="btn btn-outline-success">
+									item
+								</Link> */}
+								{/* <button onClick={deleteTodo}>Delete</button> */}
 							</div>
 						</div>
 					);
@@ -99,4 +103,4 @@ function Order() {
 	);
 }
 
-export default Order;
+export default PayOnDelivery;

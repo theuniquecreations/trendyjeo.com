@@ -101,8 +101,9 @@ function HomePageOne() {
   return (
     <Fragment>
       <header className="headerArea">
-        <HeaderTop className="headerTop" />
+       
         <HeaderBotton className="headerBottomArea" />
+        <HeaderTop className="headerTop" />
       </header>
       <HeroSlider sliders={heroSliders} className="heroSliderArea" />
 

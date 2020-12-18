@@ -10,6 +10,7 @@ const ProductPage = () => {
     
     <Fragment>
       <header className="headerArea">
+      <HeaderTop className="headerTop" />
         <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
       </header>
       <Products className="aboutArea" title="About" />

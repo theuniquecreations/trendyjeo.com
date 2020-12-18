@@ -4,7 +4,7 @@ import { app } from "../../scripts/fbase";
 import FooterArea from "../FooterArea";
 import "./style.scss";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Checkout from '../Payment/checkout';
+import Checkout from '../Payment/payondelivery';
 
 
 
@@ -76,7 +76,7 @@ function Appps() {
 								<p>Rs..{user.phno}</p>
 								{/* <button onClick={deleteTodo}>Delete</button> */}
 								{/* <Route path="/Checkout" component={Checkout} /> */}
-                <Link to="/Checkout" className="btn btn-outline-success">Buy Now</Link>
+                <Link to="/Typeofpay" className="btn btn-outline-success">Buy Now</Link>
 							</div>
 						</div>
 					</div>
