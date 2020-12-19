@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import { app } from '../../scripts/fbase';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+import barcode from "../../images/barcode.jpg"
+
 const db = app.firestore();
 
-function Checkout() {
+function Paynow() {
 	const [fileUrl, setFileUrl] = React.useState(null);
 	const [users, setUsers] = React.useState([]);
 
@@ -13,7 +16,8 @@ function Checkout() {
 		const fileRef = storageRef.child(file.name);
 		await fileRef.put(file);
 		setFileUrl(await fileRef.getDownloadURL());
-	};
+    };
+   
  
 	const onSubmit = async (e) => {
 		e.preventDefault();
@@ -21,22 +25,24 @@ function Checkout() {
 		const phno = e.target.phno.value;
 		const address = e.target.address.value;
 		const select = e.target.select.value;
+		 
 		if (!username || !phno || !fileUrl) {
 			return;
 		}
 
-		await db.collection('UserData').doc(username).set({
+		await db.collection('paynow').doc(username).set({
 			name: username,
 			avatar: fileUrl,
 			phno: phno,
 			address:address,
 			type:select,
+		 
 		});
 	};
 
 	useEffect(() => {
 		const fetchUsers = async () => {
-			const usersCollection = await db.collection('UserData').get();
+			const usersCollection = await db.collection('paynow').get();
 			setUsers(
 				usersCollection.docs.map((doc) => {
 					return doc.data();
@@ -46,14 +52,17 @@ function Checkout() {
 		fetchUsers();
 	}, []);
 	const deleteTodo = async (e) => {
-		const todoRef = db.database().ref('UserData').child(users.id);
+		const todoRef = db.database().ref('paynow').child(users.id);
 		todoRef.remove();
 	};
 
 	return (
 		<>
+        <div >
+             
+        <div>
 			<form onSubmit={onSubmit}>
-				<input type="file" onChange={onFileChange}/>
+           
 				<br></br>
 				 <select name="select">
 				<option value="None">Catogery</option>
@@ -68,11 +77,21 @@ function Checkout() {
 				<input type="text" name="phno" placeholder="Number" />
 				<br></br>
 				<input type="text" name="address" placeholder="Address with pin" />
-
+                <br></br>
+                <h1>Please scan and Pay</h1>
+            <img src={barcode} alt="barcode" height="200px" width="200px"/>
+            <br></br>
+            Upload Payment Screenshot : <input type="file" onChange={onFileChange}/>
 				<br></br>
 				<button>Submit</button>
 				<br></br>
+               
 			</form>
+            </div>
+            <div>
+              
+            </div>
+            </div>
 			<ul>
 				{users.map((user) => {
 					return (
@@ -99,4 +118,4 @@ function Checkout() {
 	);
 }
 
-export default Checkout;
+export default Paynow;

@@ -1,12 +1,9 @@
-
 import React, { useEffect } from "react";
 import { app } from "../../scripts/fbase";
 import FooterArea from "../FooterArea";
 import "./style.scss";
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Checkout from '../Payment/checkout';
-
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Checkout from "../Payment/payondelivery";
 
 const db = app.firestore();
 
@@ -26,16 +23,15 @@ function Appps() {
     e.preventDefault();
     const username = e.target.username.value;
     const phno = e.target.phno.value;
-    if (!username||!phno || !fileUrl) {
+    if (!username || !phno || !fileUrl) {
       return;
     }
-    
+
     await db.collection("users").doc(username).set({
       name: username,
       avatar: fileUrl,
-      phno:phno,
+      phno: phno,
     });
-    
   };
 
   useEffect(() => {
@@ -49,49 +45,63 @@ function Appps() {
     };
     fetchUsers();
   }, []);
-  const deleteTodo =  async(e) => {
-    const todoRef =db.database().ref('users').child(users.id);
+  const deleteTodo = async (e) => {
+    const todoRef = db.database().ref("users").child(users.id);
     todoRef.remove();
-  }; 
+  };
 
   return (
     <>
-      <form onSubmit={onSubmit}>
-        {/* <input type="file" onChange={onFileChange} /><br></br>
+      {/* <form onSubmit={onSubmit}> */}
+      {/* <input type="file" onChange={onFileChange} /><br></br>
         <input type="text" name="username" placeholder="Name" /><br></br>
         <input type="text" name="phno" placeholder="Rs." /><br></br>
         <button>Submit</button><br></br> */}
-      </form>
-      <ul>
-        {users.map((user) => {
-          return (
-				<>
-					<header className="headerArea"></header>
-					<div className="contactusPageArea ">
-						<div className="container row">
-							<div key={user.name}>
-								<img width="250" height="300" src={user.avatar} alt={user.name} />
-
-								<h1>{user.name}</h1>
-								<p>Rs..{user.phno}</p>
-								{/* <button onClick={deleteTodo}>Delete</button> */}
-								{/* <Route path="/Checkout" component={Checkout} /> */}
-                <Link to="/Checkout" className="btn btn-outline-success">Buy Now</Link>
-							</div>
-						</div>
-					</div>
-				</>
-			);
-        })}
-      </ul>
+      {/* </form> */}
+      <div className="productArea">
+        <div className="container">
+          <ul>
+            {users.map((user) => {
+              return (
+                <>
+                  <div className="productdiv">
+                    <div key={user.name}>
+                      <img
+                        width="250"
+                        height="300"
+                        src={user.avatar}
+                        alt={user.name}
+                      />
+                      <h4 className="wrap">{user.name}</h4>
+                      <div className="clearboth">
+                        <div className="floatleft">
+                          <p className="bold">Rs..{user.phno}</p>
+                        </div>
+                        {/* <button onClick={deleteTodo}>Delete</button> */}
+                        {/* <Route path="/Checkout" component={Checkout} /> */}
+                        <div className="floatright">
+                          <Link
+                            to="/Typeofpay"
+                            className="btn btn-outline-success"
+                          >
+                            Buy Now
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+          </ul>
+        </div>
+        <div className="clearboth"></div>
+      </div>
     </>
   );
 }
 
 export default Appps;
-
-
-
 
 /*import React, { useState, useEffect } from "react";
 import firebase from "../../scripts/fbase";

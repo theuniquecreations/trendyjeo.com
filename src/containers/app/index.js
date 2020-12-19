@@ -6,8 +6,12 @@ import AboutPage from "../Pages/AboutPage";
 import ProductPage from "../Pages/ProductPage";
 import AdminPage from "../Pages/AdminPage";
 import ContactPage from "../Pages/ContactPage";
-import Checkout from "../../components/Payment/checkout";
-import Order from "../../scripts/orderedList";
+import PayOnDelivery from "../../components/Payment/payondelivery";
+import Order from "../../scripts/paynoworderedList";
+import Orders from "../../scripts/payondeliveryuserlist";
+import Typeofpay from "../../components/Payment/typeofpay";
+import Paynow from "../../components/Payment/paynow"; 
+
 import "./App.css";
 
 class App extends Component {
@@ -22,8 +26,11 @@ class App extends Component {
             <Route exact path="/products" component={ProductPage} />
             <Route exact path="/admin" component={AdminPage} />
             <Route exact path="/contact" component={ContactPage} />
-            <Route exact path="/Checkout" component={Checkout} />Order
-            <Route exact path="/Order" component={Order} />
+            <Route exact path="/PayOnDelivery" component={PayOnDelivery} />Order
+            <Route exact path="/Order" component={Order} /> 
+            <Route exact path="/Orders" component={Orders} /> 
+            <Route exact path="/Typeofpay" component={Typeofpay} />
+            <Route exact path="/Paynow" component={Paynow} /> 
           </Switch>
         </BrowserRouter>
       </Fragment>

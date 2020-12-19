@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import HeaderBotton from "../../../components/HeaderBottom";
+import HeaderTop from "../../../components/HeaderTop";
 import HeroSlider from "../../../components/HeroSlider";
 import About from "../../../components/About";
 import FooterArea from "../../../components/FooterArea";
@@ -101,6 +102,7 @@ function HomePageOne() {
     <Fragment>
       <header className="headerArea">
         <HeaderBotton className="headerBottomArea" />
+        <HeaderTop className="headerTop" />
       </header>
       <HeroSlider sliders={heroSliders} className="heroSliderArea" />
 

@@ -7,13 +7,12 @@ import "./style.scss";
 import UploadImage from "../../../scripts/uploadImage";
 const ProductPage = () => {
   return (
-    
     <Fragment>
       <header className="headerArea">
         <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
+        <HeaderTop className="headerTop" />
       </header>
-      <Products className="aboutArea" title="About" />
-     
+      <Products className="ProductArea" title="Product" />
       <FooterArea />
     </Fragment>
   );

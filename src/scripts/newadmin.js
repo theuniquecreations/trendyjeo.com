@@ -51,7 +51,8 @@ function Appps() {
   return (
     <>
     <div>
-     <Link to="/Order" className="btn btn-outline-success">See User Ordered List</Link>
+     <Link to="/Order" className="btn btn-outline-success">Payed Now User Ordered List</Link><br></br>
+     <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery User Ordered List</Link>
      </div>
       <form onSubmit={onSubmit}>
         <input type="file" onChange={onFileChange} /><br></br>
