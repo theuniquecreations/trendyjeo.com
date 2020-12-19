@@ -101,7 +101,6 @@ function HomePageOne() {
   return (
     <Fragment>
       <header className="headerArea">
-       
         <HeaderBotton className="headerBottomArea" />
         <HeaderTop className="headerTop" />
       </header>
