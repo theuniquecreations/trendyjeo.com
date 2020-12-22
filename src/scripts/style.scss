@@ -1,0 +1,35 @@
+.productArea {
+    padding: 60px 0 60px !important;
+  
+    img {
+      width: 250px;
+      height: 250px;
+      border-radius: 20px;
+    }
+    .productdiv {
+      width: auto;
+      float: left;
+      margin: 5px;
+      padding: 5px;
+    }
+    .clearboth {
+      clear: both;
+      margin-top: 10px;
+    }
+    .floatright {
+      float: right;
+    }
+    .wrap {
+      flex-wrap: wrap;
+      width: 150px;
+    }
+    .floatleft {
+      float: left;
+      p {
+        font-size: larger;
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+  

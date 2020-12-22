@@ -30,6 +30,12 @@ class Cards extends Component {
           <div className="col-md-3">
             <Card img={Logo2} title="Cup" des={this.three} />
           </div>
+          <div className="col-md-3">
+            <Card img={Logo2} title="Cup" des={this.three} />
+          </div>
+          <div className="col-md-3">
+            <Card img={Logo2} title="Cup" des={this.three} />
+          </div>
         </div>
       </div>
     );

@@ -80,7 +80,7 @@ function Appps() {
                         {/* <button onClick={deleteTodo}>Delete</button> */}
                         {/* <Route path="/Checkout" component={Checkout} /> */}
                         <div className="floatright">
-                          <Link
+                          <Link 
                             to="/Typeofpay"
                             className="btn btn-outline-success"
                           >
