@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+ 
 //import logo from "../../images/logo/logo.png";
 import "./style.scss";
 const footerLinks = [
   {
     title: "Quick Link",
-    menus: [
-      { name: "Home", route: "/" },
-      { name: "Products", route: "/" },
-      { name: "Contact", route: "/" },
+    menus: [/* <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery User Ordered List</Link> */
+      { name: "Home", route: "" },
+      { name: "Our Products", route: "products" },
+      { name: "Contact", route: "contact" },
     ],
   },
   {
@@ -23,9 +24,10 @@ const footerLinks = [
   {
     title: "Contact me",
     menus: [
-      { name: "www.instagram.com/trendyjeo" },
-      { name: "www.facebook.com/trendyjeo" },
-      { name: "Email: treandyjep@gmail.com" },
+     /*
+      { name: "https://www.instagram.com/trendy_jeo/?igshid=1e5w3hmdcb2t7" },
+      { name: "www.facebook.com/trendyjeo" },*/
+      { name: "Email: trendyjeo@gmail.com" },
     ],
   },
 ];
@@ -42,7 +44,7 @@ const FooterArea = () => {
                   <h1>Trendy Jeo</h1>
                 </Link>
                 <p>
-                  Description Description Description Description Description
+                Gift shop, Arts & crafts shop, Cultural gift shop
                 </p>
               </div>
             </div>

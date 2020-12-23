@@ -20,6 +20,7 @@ function Appps() {
     e.preventDefault();
     const username = e.target.username.value;
     const phno = e.target.phno.value;
+    const select = e.target.select.value;
     if (!username||!phno || !fileUrl) {
       return;
     }
@@ -28,13 +29,14 @@ function Appps() {
       name: username,
       avatar: fileUrl,
       phno:phno,
+      type:select,
     });
     
   };
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("users").get();
+      const usersCollection = await db.collection("users")/*.where('type','==','cup')*/.get();
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -59,6 +61,12 @@ function Appps() {
         <input type="text" name="username" placeholder="Name" /><br></br>
      
         <input type="text" name="phno" placeholder="Rs." /><br></br>
+        <select name="select">
+				<option value="None">Catogery</option>
+				<option value="cup">cup</option>
+				<option  value="Phone case">Phone case</option>
+				<option value="T-shirt">T-shirt</option>
+				</select>
         <button>Submit</button><br></br>
       </form><br></br>
       <br></br> 

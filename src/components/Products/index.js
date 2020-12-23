@@ -3,13 +3,47 @@ import { app } from "../../scripts/fbase";
 import FooterArea from "../FooterArea";
 import "./style.scss";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import Checkout from "../Payment/payondelivery";
 
 const db = app.firestore();
 
 function Appps() {
   const [fileUrl, setFileUrl] = React.useState(null);
-  const [users, setUsers] = React.useState([]);
+  const [users, setUsers] = React.useState([]); 
+
+const filteredSch=async()=>{  
+      const usersCollection = await db.collection("users").where('type','==','cup').get();/*.orderBy('phno','asc').limit(6).get()*/
+      setUsers(
+        usersCollection.docs.map((doc) => {
+          return doc.data();
+        })      );
+    
+}
+const filteredSchs=async()=>{  
+  const usersCollection = await db.collection("users").where('type','==','Phone case').get();/*.orderBy('phno','asc').limit(6).get()*/
+  setUsers(
+    usersCollection.docs.map((doc) => {
+      return doc.data();
+    })
+  );
+}
+const filteredSchss=async()=>{  
+  const usersCollection = await db.collection("users").where('type','==','T-shirt').get();/*.orderBy('phno','asc').limit(6).get()*/
+  setUsers(
+    usersCollection.docs.map((doc) => {
+      return doc.data();
+    })
+  );
+}
+const all=async()=>{  
+const usersCollection = await db.collection("users").get()/*.orderBy('phno','asc').limit(6).get()*/;
+      setUsers(
+        usersCollection.docs.map((doc) => {
+          return doc.data();
+        })
+      );
+}
 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
@@ -23,6 +57,7 @@ function Appps() {
     e.preventDefault();
     const username = e.target.username.value;
     const phno = e.target.phno.value;
+    const select=e.target.select.value;
     if (!username || !phno || !fileUrl) {
       return;
     }
@@ -36,7 +71,7 @@ function Appps() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("users").get();
+      const usersCollection = await db.collection("users").get()/*.orderBy('phno','asc').limit(6).get()*/;
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -52,13 +87,36 @@ function Appps() {
 
   return (
     <>
+    <br></br>
+    <br></br>
+    <br></br>  
+    <select name="select" onChange={all}>
+				<option value="None">Catogery</option>
+				<option value="all">all</option>
+				</select>
+    <select name="select" onChange={filteredSch}>
+				<option value="None">Catogery</option>
+				<option value="cup">cup</option>
+				</select>
+        <select name="select" onChange={filteredSchs}>
+				<option value="None">Catogery</option>
+			 
+				<option  value="Phone case">Phone case</option>
+				 
+				</select>
+        <select name="select" onChange={filteredSchss}>
+				<option value="None">Catogery</option>
+				 
+				<option value="T-shirt">T-shirt</option>
+				</select>
+        
       {/* <form onSubmit={onSubmit}> */}
       {/* <input type="file" onChange={onFileChange} /><br></br>
         <input type="text" name="username" placeholder="Name" /><br></br>
         <input type="text" name="phno" placeholder="Rs." /><br></br>
         <button>Submit</button><br></br> */}
       {/* </form> */}
-      <div className="productArea">
+      <div className="productArea">  
         <div className="container">
           <ul>
             {users.map((user) => {
