@@ -64,9 +64,10 @@ function Appps() {
         <select name="select">
 				<option value="None">Catogery</option>
 				<option value="cup">cup</option>
-				<option  value="Phone case">Phone case</option>
-				<option value="T-shirt">T-shirt</option>
-				</select>
+				<option  value="phone case">Phone case</option>
+        <option value="pillow">Pillow</option>
+				<option value="t-shirt">T-shirt</option>
+				</select><br></br>
         <button>Submit</button><br></br>
       </form><br></br>
       <br></br> 

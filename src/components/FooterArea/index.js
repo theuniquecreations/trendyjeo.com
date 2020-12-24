@@ -25,8 +25,8 @@ const footerLinks = [
     title: "Contact me",
     menus: [
      /*
-      { name: "https://www.instagram.com/trendy_jeo/?igshid=1e5w3hmdcb2t7" },
-      { name: "www.facebook.com/trendyjeo" },*/
+      { name: "https://www.instagram.com/trendy_jeo/?igshid=1e5w3hmdcb2t7" },*/
+      { name: "Contact us: +91-9345495954" },
       { name: "Email: trendyjeo@gmail.com" },
     ],
   },

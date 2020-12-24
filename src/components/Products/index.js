@@ -12,24 +12,24 @@ function Appps() {
   const [fileUrl, setFileUrl] = React.useState(null);
   const [users, setUsers] = React.useState([]); 
 
-const filteredSch=async()=>{  
-      const usersCollection = await db.collection("users").where('type','==','cup').get();/*.orderBy('phno','asc').limit(6).get()*/
+const tshirt=async()=>{  
+      const usersCollection = await db.collection("users").where('type','==','tshirt').get();/*.orderBy('phno','asc').limit(6).get()*/
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
         })      );
     
 }
-const filteredSchs=async()=>{  
-  const usersCollection = await db.collection("users").where('type','==','Phone case').get();/*.orderBy('phno','asc').limit(6).get()*/
+const cups=async()=>{  
+  const usersCollection = await db.collection("users").where('type','==','cup').get();/*.orderBy('phno','asc').limit(6).get()*/
   setUsers(
     usersCollection.docs.map((doc) => {
       return doc.data();
     })
   );
 }
-const filteredSchss=async()=>{  
-  const usersCollection = await db.collection("users").where('type','==','T-shirt').get();/*.orderBy('phno','asc').limit(6).get()*/
+const pillows=async()=>{  
+  const usersCollection = await db.collection("users").where('type','==','pillow').get();/*.orderBy('phno','asc').limit(6).get()*/
   setUsers(
     usersCollection.docs.map((doc) => {
       return doc.data();
@@ -44,7 +44,16 @@ const usersCollection = await db.collection("users").get()/*.orderBy('phno','asc
         })
       );
 }
+const phone=async()=>{  
+  const usersCollection = await db.collection("users").where('type','==','phone case').get()/*.orderBy('phno','asc').limit(6).get()*/;
+        setUsers(
+          usersCollection.docs.map((doc) => {
+            return doc.data();
+          })
+        );
+  }
 
+ 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
     const storageRef = app.storage().ref();
@@ -85,30 +94,18 @@ const usersCollection = await db.collection("users").get()/*.orderBy('phno','asc
     todoRef.remove();
   };
 
+
   return (
     <>
     <br></br>
     <br></br>
     <br></br>  
-    <select name="select" onChange={all}>
-				<option value="None">Catogery</option>
-				<option value="all">all</option>
-				</select>
-    <select name="select" onChange={filteredSch}>
-				<option value="None">Catogery</option>
-				<option value="cup">cup</option>
-				</select>
-        <select name="select" onChange={filteredSchs}>
-				<option value="None">Catogery</option>
-			 
-				<option  value="Phone case">Phone case</option>
-				 
-				</select>
-        <select name="select" onChange={filteredSchss}>
-				<option value="None">Catogery</option>
-				 
-				<option value="T-shirt">T-shirt</option>
-				</select>
+     
+        <input type="checkbox" onChange={all} />All products<br></br>
+        <input type="checkbox" onChange={cups} /> Cup<br></br>
+        <input type="checkbox" onChange={pillows} />Pillow<br></br>
+        <input type="checkbox" onChange={tshirt} />T-shirt<br></br>
+        <input type="checkbox" onChange={phone} />Phone<br></br>
         
       {/* <form onSubmit={onSubmit}> */}
       {/* <input type="file" onChange={onFileChange} /><br></br>
@@ -116,7 +113,7 @@ const usersCollection = await db.collection("users").get()/*.orderBy('phno','asc
         <input type="text" name="phno" placeholder="Rs." /><br></br>
         <button>Submit</button><br></br> */}
       {/* </form> */}
-      <div className="productArea">  
+      <div className="productArea justify-content-center">  
         <div className="container">
           <ul>
             {users.map((user) => {
@@ -125,7 +122,7 @@ const usersCollection = await db.collection("users").get()/*.orderBy('phno','asc
                   <div className="productdiv">
                     <div key={user.name}>
                       <img
-                        width="250"
+                        width="300"
                         height="300"
                         src={user.avatar}
                         alt={user.name}

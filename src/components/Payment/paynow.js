@@ -3,6 +3,7 @@ import { app } from '../../scripts/fbase';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import barcode from "../../images/barcode.jpg"
+ 
 
 const db = app.firestore();
 
@@ -37,7 +38,7 @@ function Paynow() {
 		const phno = e.target.phno.value;
 		const address = e.target.address.value;
 		const select = e.target.select.value;
-		 
+		const city = e.target.city.value;
 		if (!username || !phno || !fileUrl || !fileUrls) {
 			return;
 		}
@@ -49,6 +50,7 @@ function Paynow() {
 			phno: phno,
 			address:address,
 			type:select,
+			city:city
 		 
 		});
 	};
@@ -74,6 +76,8 @@ function Paynow() {
 		todoRef.remove();
 	};
 
+	 
+
 	return (
 		<>
         <div >
@@ -94,7 +98,9 @@ function Paynow() {
 
 				<input type="text" name="phno" placeholder="Number" />
 				<br></br>
-				<input type="text" name="address" placeholder="Address with pin" />
+				<input type="text" name="address" placeholder="Street" />
+				<br></br>
+				<input type="text" name="city" placeholder="city" />
                 <br></br> 
                 <h1>Please scan and Pay</h1>
             <img src={barcode} alt="barcode" height="200px" width="200px"/>
@@ -102,6 +108,8 @@ function Paynow() {
                 Upload Payment Screenshot : <input type="file" onChange={onFileChangescreen}/>
 				<br></br>
 				<button>Submit</button>
+
+				 
 				<br></br>
                
 			</form>

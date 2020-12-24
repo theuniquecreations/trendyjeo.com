@@ -109,7 +109,7 @@ function HomePageOne() {
       <SectionTitle title="Our Products" />
 
       <Cards />
-      <SectionTitle title="Contact us : +91-9876543290" />
+      <SectionTitle title=" " />
       <FooterArea />
     </Fragment>
   );

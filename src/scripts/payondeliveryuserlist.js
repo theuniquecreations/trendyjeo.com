@@ -23,7 +23,7 @@ function PayOnDeliveryOrder()  {
 		const phno = e.target.phno.value;
 		const address = e.target.address.value;
 		const select = e.target.select.value;
-		 
+		const city = e.target.city.value;
 		if (!username || !phno || !fileUrl) {
 			return;
 		}
@@ -34,7 +34,7 @@ function PayOnDeliveryOrder()  {
 			phno: phno,
 			address:address,
 			type:select,
-		 
+		   city:city
 		});
 
 	};
@@ -116,11 +116,13 @@ function PayOnDeliveryOrder()  {
 								 
 							</div>
 							<div>
-								  <h1 className="wrap">{user.name}</h1>
+								  <p>{user.name}</p>
 								  <div className="clearboth">
-								<p>  {user.phno}</p>  
-                                <p>  {user.type}</p>  
-                                <p>  {user.address}</p>  
+								<p> Phno : {user.phno}</p>  
+                                <p>Type : {user.type}</p>  
+                                 
+								<p>Street : {user.address}</p> 
+								<p>City : {user.city}</p>   
 								{/* <Link to="/products" className="btn btn-outline-success">
 									item
 								</Link> */}
