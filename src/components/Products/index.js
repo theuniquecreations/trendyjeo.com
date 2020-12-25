@@ -10,67 +10,86 @@ const db = app.firestore();
 
 function Appps() {
   const [fileUrl, setFileUrl] = React.useState(null);
-  const [users, setUsers] = React.useState([]); 
+  const [users, setUsers] = React.useState([]);
 
-const tshirt=async()=>{  
-      const usersCollection = await db.collection("users").where('type','==','t-shirt').get();/*.orderBy('phno','asc').limit(6).get()*/
-      setUsers(
-        usersCollection.docs.map((doc) => {
-          return doc.data();
-        })      );
-    
-}
-const cups=async()=>{  
-  const usersCollection = await db.collection("users").where('type','==','cup').get();/*.orderBy('phno','asc').limit(6).get()*/
-  setUsers(
-    usersCollection.docs.map((doc) => {
-      return doc.data();
-    })
-  );
-}
-const pillows=async()=>{  
-  const usersCollection = await db.collection("users").where('type','==','pillow').get();/*.orderBy('phno','asc').limit(6).get()*/
-  setUsers(
-    usersCollection.docs.map((doc) => {
-      return doc.data();
-    })
-  );
-}
-const all=async()=>{  
-const usersCollection = await db.collection("users").get()/*.orderBy('phno','asc').limit(6).get()*/;
-      setUsers(
-        usersCollection.docs.map((doc) => {
-          return doc.data();
-        })
-      );
-}
-const phone=async()=>{  
-  const usersCollection = await db.collection("users").where('type','==','phone case').get()/*.orderBy('phno','asc').limit(6).get()*/;
-        setUsers(
-          usersCollection.docs.map((doc) => {
-            return doc.data();
-          })
-        );
-  }
+  const tshirt = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "t-shirt")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const cups = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "cup")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const pillows = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "pillow")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const all = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const phone = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "phone case")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
 
-  const photo=async()=>{  
-    const usersCollection = await db.collection("users").where('type','==','photo').get()/*.orderBy('phno','asc').limit(6).get()*/;
-          setUsers(
-            usersCollection.docs.map((doc) => {
-              return doc.data();
-            })
-          );
-    }
-    const hand=async()=>{  
-      const usersCollection = await db.collection("users").where('type','==','hand').get()/*.orderBy('phno','asc').limit(6).get()*/;
-            setUsers(
-              usersCollection.docs.map((doc) => {
-                return doc.data();
-              })
-            );
-      }
+  const photo = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "photo")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const hand = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "hand")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
 
- 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
     const storageRef = app.storage().ref();
@@ -83,7 +102,7 @@ const phone=async()=>{
     e.preventDefault();
     const username = e.target.username.value;
     const phno = e.target.phno.value;
-    const select=e.target.select.value;
+    const select = e.target.select.value;
     if (!username || !phno || !fileUrl) {
       return;
     }
@@ -97,7 +116,9 @@ const phone=async()=>{
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("users").get()/*.orderBy('phno','asc').limit(6).get()*/;
+      const usersCollection = await db
+        .collection("users")
+        .get(); /*.orderBy('phno','asc').limit(6).get()*/
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -111,45 +132,88 @@ const phone=async()=>{
     todoRef.remove();
   };
 
-
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>  
-      
-    <div class="btn-group btn-group-toggle " data-toggle="buttons">
-    <label class="btn btn-secondary active">
-       <button onClick={all} class="rounded-pill btn btn-outline-warning cent">All Products</button></label></div>
-       <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
-    <label class="btn btn-secondary active">   
-      <button onClick={hand} class="rounded-pill btn btn-outline-warning cen">Hand made craft</button></label> </div>
-    <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
-    <label class="btn btn-secondary active">    
-     <button onClick={cups} class="rounded-pill btn btn-outline-warning cen">Mug</button></label>
+      <br></br>
+
+      <div class="btn-group btn-group-toggle " data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <button
+            onClick={all}
+            class="rounded-pill btn btn-outline-warning cent"
+          >
+            All Products
+          </button>
+        </label>
       </div>
-        
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">  
-        <label class="btn btn-secondary active">  
-         <button onClick={tshirt} class="rounded-pill btn btn-outline-warning cen">T-shirt </button></label></div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
-        <label class="btn btn-secondary active"> 
-           <button onClick={photo} class="rounded-pill btn btn-outline-warning cen">Photo frame</button></label></div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-           <label class="btn btn-secondary active">  
-           <button onClick={phone} class="rounded-pill btn btn-outline-warning cen">Mobilecase</button></label> </div>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
-        <label class="btn btn-secondary active">  
-           <button onClick={pillows} class="rounded-pill btn btn-outline-warning cen">Pillow</button></label>
-  
-        </div>  
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <button
+            onClick={hand}
+            class="rounded-pill btn btn-outline-warning cen"
+          >
+            Hand made craft
+          </button>
+        </label>{" "}
+      </div>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <button
+            onClick={cups}
+            class="rounded-pill btn btn-outline-warning cen"
+          >
+            Mug
+          </button>
+        </label>
+      </div>
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <button
+            onClick={tshirt}
+            class="rounded-pill btn btn-outline-warning cen"
+          >
+            T-shirt{" "}
+          </button>
+        </label>
+      </div>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <button
+            onClick={photo}
+            class="rounded-pill btn btn-outline-warning cen"
+          >
+            Photo frame
+          </button>
+        </label>
+      </div>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <button
+            onClick={phone}
+            class="rounded-pill btn btn-outline-warning cen"
+          >
+            Mobilecase
+          </button>
+        </label>{" "}
+      </div>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <button
+            onClick={pillows}
+            class="rounded-pill btn btn-outline-warning cen"
+          >
+            Pillow
+          </button>
+        </label>
+      </div>
       {/* <form onSubmit={onSubmit}> */}
       {/* <input type="file" onChange={onFileChange} /><br></br>
         <input type="text" name="username" placeholder="Name" /><br></br>
         <input type="text" name="phno" placeholder="Rs." /><br></br>
         <button>Submit</button><br></br> */}
       {/* </form> */}
-      <div className="productArea justify-content-center">  
+      <div className="productArea justify-content-center">
         <div className="container">
           <ul>
             {users.map((user) => {
@@ -171,7 +235,7 @@ const phone=async()=>{
                         {/* <button onClick={deleteTodo}>Delete</button> */}
                         {/* <Route path="/Checkout" component={Checkout} /> */}
                         <div className="floatright">
-                          <Link 
+                          <Link
                             to="/Typeofpay"
                             className="btn btn-outline-success"
                           >

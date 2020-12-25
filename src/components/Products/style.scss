@@ -17,15 +17,24 @@ body {
 .container-fluid .row {
   padding-top: 4rem;
 }
-
-
-.cen{
-  margin-left: auto;
-    margin-right: auto;
-    width: 154px;
+.btn-outline-success:hover {
+  background-color: #000000;
+  border: solid black 1px;
+  color: #ffd000;
 }
-.cent{
+.btn-outline-success {
+  background-color: #3d3d3d;
+  border: solid black 1px;
+  color: #ffd000;
+}
+
+.cen {
   margin-left: auto;
-    margin-right: auto;
-    width: 333px;
+  margin-right: auto;
+  width: 154px;
+}
+.cent {
+  margin-left: auto;
+  margin-right: auto;
+  width: 333px;
 }

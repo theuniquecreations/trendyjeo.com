@@ -12,9 +12,9 @@
     display: flex;
     align-items: center;
     .logo {
-      padding: 10px 10px;
+      //padding: 10px 10px;
       @media (max-width: 800px) {
-        padding: 10px 0;
+        //padding: 10px 0;
         margin-top: 0;
       }
       img {
@@ -63,14 +63,14 @@
             font-size: 14px;
           }
           &.active {
-            color: #aaaaaa;
+            color: #ffd000;
           }
         }
 
         &:hover {
           a,
           span {
-            color: #aaaaaa;
+            color: #ffd000;
           }
         }
         ul.subMenu {
@@ -107,7 +107,7 @@
               text-transform: capitalize;
               &:hover,
               &.active {
-                color: #aaaaaa;
+                color: #ffd000;
               }
             }
           }
@@ -179,7 +179,7 @@
         align-items: center;
         justify-content: flex-end;
         i {
-          color: #aaaaaa;
+          color: #ffd000;
           cursor: pointer;
           &:hover {
             color: #ffffff;
@@ -262,7 +262,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       @media (max-width: 800px) {
         position: relative;
-        background: #272c3f;
+        background: #000000;
       }
     }
   }
@@ -270,10 +270,10 @@
     .headerBottomArea {
       background: transparent;
       @media (max-width: 768px) {
-        background: #272c3f;
+        background: #000000;
       }
       .headerBottomMainWrapper {
-        background: #272c3f;
+        background: #000000;
         padding: 0px 15px;
         @media (max-width: 768px) {
           padding: 0;
