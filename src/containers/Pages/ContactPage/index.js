@@ -23,11 +23,12 @@ const ContactPage = () => {
                 <h3>Contact me</h3>
 
                 <h4>Phone</h4>
-                <span>+91-9345495954</span>
-                <span> </span>
+                <i class="fa fa-phone" aria-hidden="true"> +91-9345495954 </i> 
+                <br></br>
                 <h4>Email</h4>
-                <span>trendyjeo@gmail.com</span>
-                <h4>Instagram</h4>
+                <i class="fa fa-envelope" aria-hidden="true">   trendyjeo@gmail.com </i>  <br></br>
+                <br></br>
+                <p>Instagram</p>
                <span> <a
                       href="https://www.instagram.com/trendy_jeo/?igshid=1e5w3hmdcb2t7"
                       className="text-white"

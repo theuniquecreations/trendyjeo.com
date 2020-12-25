@@ -13,7 +13,7 @@ function Appps() {
   const [users, setUsers] = React.useState([]); 
 
 const tshirt=async()=>{  
-      const usersCollection = await db.collection("users").where('type','==','tshirt').get();/*.orderBy('phno','asc').limit(6).get()*/
+      const usersCollection = await db.collection("users").where('type','==','t-shirt').get();/*.orderBy('phno','asc').limit(6).get()*/
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -52,6 +52,23 @@ const phone=async()=>{
           })
         );
   }
+
+  const photo=async()=>{  
+    const usersCollection = await db.collection("users").where('type','==','photo').get()/*.orderBy('phno','asc').limit(6).get()*/;
+          setUsers(
+            usersCollection.docs.map((doc) => {
+              return doc.data();
+            })
+          );
+    }
+    const hand=async()=>{  
+      const usersCollection = await db.collection("users").where('type','==','hand').get()/*.orderBy('phno','asc').limit(6).get()*/;
+            setUsers(
+              usersCollection.docs.map((doc) => {
+                return doc.data();
+              })
+            );
+      }
 
  
   const onFileChange = async (e) => {
@@ -100,13 +117,32 @@ const phone=async()=>{
     <br></br>
     <br></br>
     <br></br>  
-     
-        <input type="checkbox" onChange={all} />All products<br></br>
-        <input type="checkbox" onChange={cups} /> Cup<br></br>
-        <input type="checkbox" onChange={pillows} />Pillow<br></br>
-        <input type="checkbox" onChange={tshirt} />T-shirt<br></br>
-        <input type="checkbox" onChange={phone} />Phone<br></br>
+      
+    <div class="btn-group btn-group-toggle " data-toggle="buttons">
+    <label class="btn btn-secondary active">
+       <button onClick={all} class="rounded-pill btn btn-outline-warning cent">All Products</button></label></div>
+       <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
+    <label class="btn btn-secondary active">   
+      <button onClick={hand} class="rounded-pill btn btn-outline-warning cen">Hand made craft</button></label> </div>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
+    <label class="btn btn-secondary active">    
+     <button onClick={cups} class="rounded-pill btn btn-outline-warning cen">Mug</button></label>
+      </div>
         
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">  
+        <label class="btn btn-secondary active">  
+         <button onClick={tshirt} class="rounded-pill btn btn-outline-warning cen">T-shirt </button></label></div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
+        <label class="btn btn-secondary active"> 
+           <button onClick={photo} class="rounded-pill btn btn-outline-warning cen">Photo frame</button></label></div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+           <label class="btn btn-secondary active">  
+           <button onClick={phone} class="rounded-pill btn btn-outline-warning cen">Mobilecase</button></label> </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons"> 
+        <label class="btn btn-secondary active">  
+           <button onClick={pillows} class="rounded-pill btn btn-outline-warning cen">Pillow</button></label>
+  
+        </div>  
       {/* <form onSubmit={onSubmit}> */}
       {/* <input type="file" onChange={onFileChange} /><br></br>
         <input type="text" name="username" placeholder="Name" /><br></br>

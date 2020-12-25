@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { app } from "./fbase";
-import "./style.scss";
+import "./paynow.css";
 import barcode from "../images/barcode.jpg"
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
@@ -104,28 +104,40 @@ function PayNowOrder() {
                
 			</form> */}
             </div>
-             <div className="row">
-			<div>
+             <div className="row pd">
+			
 			<ul>
 				{users.map((user) => {
 					return (
 						<div key={user.name} className="row" >
+							<div  className="sps">
+							<div><img width="200" height="200" src={user.avatarscreen} alt={user.name} /></div>
+							<div className="pds">	 <img width="200" height="200" src={user.avatar} alt={user.name} /></div>
+								
+						
+							
 							<div>
-								 <img width="200" height="200" src={user.avatar} alt={user.name} />
-								 <h1>-----------</h1>
-							</div>
-							<div>
-								 <p>Name : {user.name}</p>
-								<p>Phno : {user.phno}</p> 
-								<p>Ordered : {user.type}</p> 
-								<p>Street : {user.address}</p> 
-								<p>City : {user.city}</p> 
+							Name :<p>	  {user.name}</p>
+						Phno :<p> {user.phno}</p> 
+								 Ordered : <p>{user.type}</p> 
+							Street :	<p className="fnt"> {user.address}</p> 
+							City :	<p className="fnt"> {user.city}</p> 
+
+							<h1>-----------</h1>
+						 
+							
+							 
+					 
+				 
+	
+					 
+				 
 								{/* <Link to="/products" className="btn btn-outline-success">
 									item
 								</Link> */}
 								{/* <button onClick={deleteTodo}>Delete</button> */}
 								
-							</div>
+							</div></div>
 						</div>
 					);
                 },
@@ -134,9 +146,9 @@ function PayNowOrder() {
                 )
                 
                 }
-			</ul></div>
-			<div>
-			<ul>
+			</ul> 
+		 
+			{/* <ul>
 			{
 					userss.map((user) => {
 						return (
@@ -153,7 +165,7 @@ function PayNowOrder() {
 					 
 					)
 				}
-			</ul></div></div>
+			</ul> */}</div> 
 		</>
 	);
 }

@@ -53,8 +53,8 @@ function Appps() {
   return (
     <>
     <div>
-     <Link to="/Order" className="btn btn-outline-success">Payed Now User Ordered List</Link><br></br>
-     <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery User Ordered List</Link>
+     <Link to="/Order" className="btn btn-outline-success">Pay Now</Link><br></br>
+     <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery</Link>
      </div>
       <form onSubmit={onSubmit}>
         <input type="file" onChange={onFileChange} /><br></br>
@@ -63,10 +63,12 @@ function Appps() {
         <input type="text" name="phno" placeholder="Rs." /><br></br>
         <select name="select">
 				<option value="None">Catogery</option>
-				<option value="cup">cup</option>
+				<option value="cup">Mug</option>
 				<option  value="phone case">Phone case</option>
         <option value="pillow">Pillow</option>
 				<option value="t-shirt">T-shirt</option>
+        <option value="photo">Photo frame</option>
+				<option value="hand">Hand made craft</option>
 				</select><br></br>
         <button>Submit</button><br></br>
       </form><br></br>
