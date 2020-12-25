@@ -9,7 +9,7 @@ const ProductPage = () => {
   return (
     <Fragment>
       <header className="headerArea">
-        <HeaderBotton className="headerBottomArea headerBottomAreaStyelTwo" />
+        <HeaderBotton className="headerBottomArea" />
         <HeaderTop className="headerTop" />
       </header>
       <Products className="ProductArea" title="Product" />

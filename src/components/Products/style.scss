@@ -1,34 +1,56 @@
-.productArea {
-  padding: 60px 0 60px !important;
+body {
+  background: radial-gradient(#e5e5e5, #ffff, #e5e5e5);
+}
+.card {
+  margin-bottom: 5px;
+}
+.card:hover {
+  box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+}
+.card-body {
+  padding: 2rem 0 !important;
+}
+.card-text {
+  font-size: 0.9rem;
+  padding: 0.4rem 1.9rem;
+}
+.container-fluid .row {
+  padding-top: 4rem;
+}
+.btn-outline-success:hover {
+  background-color: #000000;
+  border: solid black 1px;
+  color: #ffd000;
+}
+.btn-outline-success {
+  background-color: #3d3d3d;
+  border: solid black 1px;
+  color: #ffd000;
+}
 
-  img {
-    width: 250px;
-    height: 250px;
-    border-radius: 20px;
-  }
-  .productdiv {
-    width: auto;
-    float: left;
-    margin: 5px;
-    padding: 5px;
-  }
-  .clearboth {
-    clear: both;
-    margin-top: 10px;
-  }
-  .floatright {
-    float: right;
-  }
-  .wrap {
-    flex-wrap: wrap;
-    width: 150px;
-  }
-  .floatleft {
-    float: left;
-    p {
-      font-size: larger;
-      font-weight: bold;
-      color: black;
-    }
-  }
+.cen {
+  margin-left: auto;
+  margin-right: auto;
+  width: 154px;
+}
+.cent {
+  margin-left: auto;
+  margin-right: auto;
+  width: 333px;
+}
+.btncat {
+  border: solid black 1px;
+  color: black;
+  padding: 6px;
+  margin: 2px;
+  background-color: #ffd000;
+}
+.btncat:hover {
+  border: solid black 1px;
+  color: black;
+  color: #ffd000;
+  background-color: #272727;
+}
+.catcontainer {
+  text-align: center;
 }

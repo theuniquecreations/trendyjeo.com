@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';/*
 import { app } from '../../scripts/fbase';*/
-import {app} from '../scripts/fbase'
+import {app} from '../scripts/fbase';
+import "./style.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
 
@@ -22,7 +23,7 @@ function PayOnDeliveryOrder()  {
 		const phno = e.target.phno.value;
 		const address = e.target.address.value;
 		const select = e.target.select.value;
-		 
+		const city = e.target.city.value;
 		if (!username || !phno || !fileUrl) {
 			return;
 		}
@@ -33,7 +34,7 @@ function PayOnDeliveryOrder()  {
 			phno: phno,
 			address:address,
 			type:select,
-		 
+		   city:city
 		});
 
 	};
@@ -49,13 +50,36 @@ function PayOnDeliveryOrder()  {
 		};
 		fetchUsers();
 	}, []);
-	const deleteTodo = async (e) => {
-		const todoRef = db.database().ref('payondelivery').child(users.id);
-		todoRef.remove();
-	};
+
+	
+  
+	
+	 
+	 const deleteTodo = async (e) => {
+		 
+		const username = e.target.username;      
+		const phno = e.target.phno;
+		const address = e.target.address;
+		const select = e.target.select;
+		 
+		if (!username || !phno || !fileUrl || !address || !select) {
+			return;
+		}
+        db.ref("payondelivery").child(username).delete 
+		({
+			name: username,
+			avatar: fileUrl,
+			phno: phno,
+			address:address,
+			type:select,
+		 
+		});
+
+	}; 
+	
 
 	return (
-		<>
+		<>  
 			{/* <form onSubmit={onSubmit}>
 				<input type="file" onChange={onFileChange}/>
 				<br></br>
@@ -78,30 +102,43 @@ function PayOnDeliveryOrder()  {
 				<button>Submit</button>
 				<br></br>
 			</form> */}
+			<div className="productArea">
+        <div className="container">
 			<ul>
 				{users.map((user) => {
 					return (
-						<div key={user.name} className="row">
+						<>
+						 <div className="productdiv">
+						<div key={user.name} >
 							<div>
 								  <img width="100" height="100" src={user.avatar} alt={user.name} />
 								<br></br>
-								<h1>---</h1>  
+								 
 							</div>
 							<div>
-								  <h1>{user.name}</h1>
-								<p>  {user.phno}</p>  
-                                <p>  {user.type}</p>  
-                                <p>  {user.address}</p>  
+								  <p>{user.name}</p>
+								  <div className="clearboth">
+								<p> Phno : {user.phno}</p>  
+                                <p>Type : {user.type}</p>  
+                                 
+								<p>Street : {user.address}</p> 
+								<p>City : {user.city}</p>   
 								{/* <Link to="/products" className="btn btn-outline-success">
 									item
 								</Link> */}
-								{/* <button onClick={deleteTodo}>Delete</button> */}
+							 {/* <button onClick={ deleteTodo}>Delete</button>  */}
+							 </div>
 							</div>
 						</div>
+						</div>
+						</>
 					);
 				}
 				)}
 			</ul>
+			</div>
+			<div className="clearboth"></div>
+			</div>
 		</>
 	);
 }

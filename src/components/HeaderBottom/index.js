@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { NavLink, Link } from "react-router-dom";
-//import logo from "../../images/logo/logo.png";
+import logo from "../../images/logo.jpeg";
 import "./style.scss";
 
 const HeaderBottom = (props) => {
@@ -25,7 +25,8 @@ const HeaderBottom = (props) => {
             <div className="col-lg-3 col-md-10 col-sm-6 col-8">
               <div className="logo">
                 <NavLink to="/">
-                  <h1>TrendyJeo</h1>
+                  {/* <h1>TrendyJeo</h1> */}
+                  <img src={logo} alt="top" height="80px" width="150px"/>
                 </NavLink>
               </div>
             </div>
@@ -67,11 +68,11 @@ const HeaderBottom = (props) => {
                     Contact
                   </NavLink>
                 </li>
-                <li>
+                {/* <li>
                   <NavLink exact to="/admin">
                     Admin
                   </NavLink>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="col-lg-1 col-md-2 col-sm-6 col-4">

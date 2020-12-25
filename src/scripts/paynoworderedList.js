@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { app } from "./fbase";
-
+import "./paynow.css";
 import barcode from "../images/barcode.jpg"
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
@@ -36,7 +36,7 @@ function PayNowOrder() {
 		const phno = e.target.phno.value;
 		const address = e.target.address.value;
 		const select = e.target.select.value;
-		 
+		const city = e.target.city.value;
 		if (!username || !phno || !fileUrl || !fileUrls) {
 			return;
 		}
@@ -48,7 +48,7 @@ function PayNowOrder() {
 			phno: phno,
 			address:address,
 			type:select,
-		 
+		    city:city
 		});
 	};
 
@@ -74,9 +74,8 @@ function PayNowOrder() {
 	};
 
 	return (
-		<>
-        <div >
-             
+		<> 
+            
         <div>
 			{/* <form onSubmit={onSubmit}>
 				<input type="file" onChange={onFileChange}/>
@@ -105,28 +104,40 @@ function PayNowOrder() {
                
 			</form> */}
             </div>
-            <div>
-              
-            </div>
-            </div>
+             <div className="row pd">
+			
 			<ul>
 				{users.map((user) => {
 					return (
-						<div key={user.name}  >
+						<div key={user.name} className="row" >
+							<div  className="sps">
+							<div><img width="200" height="200" src={user.avatarscreen} alt={user.name} /></div>
+							<div className="pds">	 <img width="200" height="200" src={user.avatar} alt={user.name} /></div>
+								
+						
+							
 							<div>
-								 <img width="100" height="100" src={user.avatar} alt={user.name} />
-								 
-							</div>
-							<div>
-								 <h1>Name : {user.name}</h1>
-								<p>Ph.no : {user.phno}</p> 
-								<p>Ordered : {user.type}</p> 
-								<p>Address : {user.address}</p> 
+							Name :<p>	  {user.name}</p>
+						Phno :<p> {user.phno}</p> 
+								 Ordered : <p>{user.type}</p> 
+							Street :	<p className="fnt"> {user.address}</p> 
+							City :	<p className="fnt"> {user.city}</p> 
+
+							<h1>-----------</h1>
+						 
+							
+							 
+					 
+				 
+	
+					 
+				 
 								{/* <Link to="/products" className="btn btn-outline-success">
 									item
 								</Link> */}
 								{/* <button onClick={deleteTodo}>Delete</button> */}
-							</div>
+								
+							</div></div>
 						</div>
 					);
                 },
@@ -135,19 +146,18 @@ function PayNowOrder() {
                 )
                 
                 }
-			</ul>
-
-			<ul>
+			</ul> 
+		 
+			{/* <ul>
 			{
 					userss.map((user) => {
 						return (
 							
 							<div key={user.name}  >
 								 
-									  <img width="100" height="100" src={user.avatarscreen} alt={user.name} />
+									  <img width="200" height="200" src={user.avatarscreen} alt={user.name} />
 									 
 								 <h1>-----------</h1>
-							 
 							</div>
 						);
 					},
@@ -155,7 +165,7 @@ function PayNowOrder() {
 					 
 					)
 				}
-			</ul>
+			</ul> */}</div> 
 		</>
 	);
 }

@@ -29,8 +29,12 @@ const HeaderTop = (props) => {
                 <a href="http://api.whatsapp.com/send?phone=919345495954">
                   Whats app
                 </a>
+                
               </div>
+              
             </div>
+           
+            
           </div>
         </div>
       </div>

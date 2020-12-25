@@ -21,7 +21,7 @@ function PayOnDelivery() {
 		const phno = e.target.phno.value;
 		const address = e.target.address.value;
 		const select = e.target.select.value;
-		 
+		const city = e.target.city.value;
 		if (!username || !phno || !fileUrl) {
 			return;
 		}
@@ -32,7 +32,7 @@ function PayOnDelivery() {
 			phno: phno,
 			address:address,
 			type:select,
-		 
+		    city:city
 		});
 
 	};
@@ -70,9 +70,10 @@ function PayOnDelivery() {
 
 				<input type="text" name="phno" placeholder="Number" />
 				<br></br>
-				<input type="text" name="address" placeholder="Address with pin" />
+				<input type="text" name="address" placeholder="Street" />
                 <br></br>
-				  
+				<input type="text" name="city" placeholder="City" />
+                <br></br>
 				<br></br>
 				<button>Submit</button>
 				<br></br>

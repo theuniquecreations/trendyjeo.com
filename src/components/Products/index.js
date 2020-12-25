@@ -3,6 +3,7 @@ import { app } from "../../scripts/fbase";
 import FooterArea from "../FooterArea";
 import "./style.scss";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import Checkout from "../Payment/payondelivery";
 
 const db = app.firestore();
@@ -10,6 +11,84 @@ const db = app.firestore();
 function Appps() {
   const [fileUrl, setFileUrl] = React.useState(null);
   const [users, setUsers] = React.useState([]);
+
+  const tshirt = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "t-shirt")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const cups = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "cup")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const pillows = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "pillow")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const all = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const phone = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "phone case")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+
+  const photo = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "photo")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
+  const hand = async () => {
+    const usersCollection = await db
+      .collection("users")
+      .where("type", "==", "hand")
+      .get(); /*.orderBy('phno','asc').limit(6).get()*/
+    setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };
 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
@@ -23,6 +102,7 @@ function Appps() {
     e.preventDefault();
     const username = e.target.username.value;
     const phno = e.target.phno.value;
+    const select = e.target.select.value;
     if (!username || !phno || !fileUrl) {
       return;
     }
@@ -36,7 +116,9 @@ function Appps() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("users").get();
+      const usersCollection = await db
+        .collection("users")
+        .get(); /*.orderBy('phno','asc').limit(6).get()*/
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -52,13 +134,69 @@ function Appps() {
 
   return (
     <>
+      <br></br>
+      <div className="catcontainer">
+        <label>
+          <button onClick={all} class="rounded-pill btncat btn-outline-warning">
+            All Products
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={hand}
+            class="rounded-pill btncat btn-outline-warning"
+          >
+            Hand made craft
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={cups}
+            class="rounded-pill btncat btn-outline-warning"
+          >
+            Mug
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={tshirt}
+            class="rounded-pill btncat btn-outline-warning"
+          >
+            T-shirt
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={photo}
+            class="rounded-pill btncat btn-outline-warning"
+          >
+            Photo frame
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={phone}
+            class="rounded-pill btncat btn-outline-warning "
+          >
+            Mobilecase
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={pillows}
+            class="rounded-pill btncat btn-outline-warning "
+          >
+            Pillow
+          </button>
+        </label>
+      </div>
       {/* <form onSubmit={onSubmit}> */}
       {/* <input type="file" onChange={onFileChange} /><br></br>
         <input type="text" name="username" placeholder="Name" /><br></br>
         <input type="text" name="phno" placeholder="Rs." /><br></br>
         <button>Submit</button><br></br> */}
       {/* </form> */}
-      <div className="productArea">
+      <div className="productArea justify-content-center">
         <div className="container">
           <ul>
             {users.map((user) => {
@@ -67,7 +205,7 @@ function Appps() {
                   <div className="productdiv">
                     <div key={user.name}>
                       <img
-                        width="250"
+                        width="300"
                         height="300"
                         src={user.avatar}
                         alt={user.name}

@@ -20,6 +20,7 @@ function Appps() {
     e.preventDefault();
     const username = e.target.username.value;
     const phno = e.target.phno.value;
+    const select = e.target.select.value;
     if (!username||!phno || !fileUrl) {
       return;
     }
@@ -28,13 +29,14 @@ function Appps() {
       name: username,
       avatar: fileUrl,
       phno:phno,
+      type:select,
     });
     
   };
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("users").get();
+      const usersCollection = await db.collection("users")/*.where('type','==','cup')*/.get();
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -51,14 +53,23 @@ function Appps() {
   return (
     <>
     <div>
-     <Link to="/Order" className="btn btn-outline-success">Payed Now User Ordered List</Link><br></br>
-     <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery User Ordered List</Link>
+     <Link to="/Order" className="btn btn-outline-success">Pay Now</Link><br></br>
+     <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery</Link>
      </div>
       <form onSubmit={onSubmit}>
         <input type="file" onChange={onFileChange} /><br></br>
         <input type="text" name="username" placeholder="Name" /><br></br>
      
         <input type="text" name="phno" placeholder="Rs." /><br></br>
+        <select name="select">
+				<option value="None">Catogery</option>
+				<option value="cup">Mug</option>
+				<option  value="phone case">Phone case</option>
+        <option value="pillow">Pillow</option>
+				<option value="t-shirt">T-shirt</option>
+        <option value="photo">Photo frame</option>
+				<option value="hand">Hand made craft</option>
+				</select><br></br>
         <button>Submit</button><br></br>
       </form><br></br>
       <br></br> 
