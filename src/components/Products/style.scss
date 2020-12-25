@@ -38,3 +38,19 @@ body {
   margin-right: auto;
   width: 333px;
 }
+.btncat {
+  border: solid black 1px;
+  color: black;
+  padding: 6px;
+  margin: 2px;
+  background-color: #ffd000;
+}
+.btncat:hover {
+  border: solid black 1px;
+  color: black;
+  color: #ffd000;
+  background-color: #272727;
+}
+.catcontainer {
+  text-align: center;
+}

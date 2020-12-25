@@ -135,73 +135,56 @@ function Appps() {
   return (
     <>
       <br></br>
-
-      <div class="btn-group btn-group-toggle " data-toggle="buttons">
-        <label class="btn btn-secondary active">
-          <button
-            onClick={all}
-            class="rounded-pill btn btn-outline-warning cent"
-          >
+      <div className="catcontainer">
+        <label>
+          <button onClick={all} class="rounded-pill btncat btn-outline-warning">
             All Products
           </button>
         </label>
-      </div>
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
+        <label>
           <button
             onClick={hand}
-            class="rounded-pill btn btn-outline-warning cen"
+            class="rounded-pill btncat btn-outline-warning"
           >
             Hand made craft
           </button>
-        </label>{" "}
-      </div>
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
+        </label>
+        <label>
           <button
             onClick={cups}
-            class="rounded-pill btn btn-outline-warning cen"
+            class="rounded-pill btncat btn-outline-warning"
           >
             Mug
           </button>
         </label>
-      </div>
-
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
+        <label>
           <button
             onClick={tshirt}
-            class="rounded-pill btn btn-outline-warning cen"
+            class="rounded-pill btncat btn-outline-warning"
           >
-            T-shirt{" "}
+            T-shirt
           </button>
         </label>
-      </div>
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
+        <label>
           <button
             onClick={photo}
-            class="rounded-pill btn btn-outline-warning cen"
+            class="rounded-pill btncat btn-outline-warning"
           >
             Photo frame
           </button>
         </label>
-      </div>
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
+        <label>
           <button
             onClick={phone}
-            class="rounded-pill btn btn-outline-warning cen"
+            class="rounded-pill btncat btn-outline-warning "
           >
             Mobilecase
           </button>
-        </label>{" "}
-      </div>
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active">
+        </label>
+        <label>
           <button
             onClick={pillows}
-            class="rounded-pill btn btn-outline-warning cen"
+            class="rounded-pill btncat btn-outline-warning "
           >
             Pillow
           </button>

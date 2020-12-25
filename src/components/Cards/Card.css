@@ -17,6 +17,7 @@ body {
 .container-fluid .row {
   padding-top: 4rem;
 }
+
 .btn-outline-success:hover {
   background-color: #fcc100;
   border: solid black 1px;
@@ -24,5 +25,5 @@ body {
 }
 .btn-outline-success {
   border: solid black 1px;
-  color: black;
+  color: #fcc100;
 }

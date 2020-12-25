@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
- 
+
 //import logo from "../../images/logo/logo.png";
 import "./style.scss";
 const footerLinks = [
   {
     title: "Quick Link",
-    menus: [/* <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery User Ordered List</Link> */
-      { name: "Home", route: "" },
+    menus: [
+      /* <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery User Ordered List</Link> */
+      { name: "About", route: "about" },
       { name: "Our Products", route: "products" },
       { name: "Contact", route: "contact" },
     ],
@@ -24,7 +25,7 @@ const footerLinks = [
   {
     title: "Contact me",
     menus: [
-     /*
+      /*
       { name: "https://www.instagram.com/trendy_jeo/?igshid=1e5w3hmdcb2t7" },*/
       { name: "Contact us: +91-9345495954" },
       { name: "Email: trendyjeo@gmail.com" },
@@ -43,9 +44,7 @@ const FooterArea = () => {
                 <Link to="/">
                   <h1>Trendy Jeo</h1>
                 </Link>
-                <p>
-                Gift shop, Arts & crafts shop, Cultural gift shop
-                </p>
+                <p>Gift shop, Arts & crafts shop, Cultural gift shop</p>
               </div>
             </div>
             {footerLinks.map((menu, i) => (
