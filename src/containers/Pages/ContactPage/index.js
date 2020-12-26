@@ -42,7 +42,7 @@ const ContactPage = () => {
                     target="blank"
                     className="clr"
                   >
-                    <i className="fa fa-instagram" aria-hidden="true"></i>
+                    <i className="fa fa-instagram" aria-hidden="true"></i> -trendy_jeo
                   </a>
                 </span>
               </div>
