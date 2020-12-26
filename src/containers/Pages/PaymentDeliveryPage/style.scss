@@ -1,0 +1,19 @@
+.clearboth {
+  clear: both;
+}
+
+.container1 {
+  height: 400px;
+  position: relative;
+}
+
+.vertical-center1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  right: 30%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+}

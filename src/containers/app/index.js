@@ -6,11 +6,11 @@ import AboutPage from "../Pages/AboutPage";
 import ProductPage from "../Pages/ProductPage";
 import AdminPage from "../Pages/AdminPage";
 import ContactPage from "../Pages/ContactPage";
-import PayOnDelivery from "../../components/Payment/payondelivery";
 import Order from "../../scripts/paynoworderedList";
 import Orders from "../../scripts/payondeliveryuserlist";
-import Typeofpay from "../../components/Payment/typeofpay";
-import Paynow from "../../components/Payment/paynow"; 
+import PaymentTypePage from "../Pages/PaymentTypePage";
+import PaymentDeliveryPage from "../Pages/PaymentDeliveryPage";
+import PaymentNowPage from "../Pages/PaymentNowPage";
 
 import "./App.css";
 
@@ -26,11 +26,16 @@ class App extends Component {
             <Route exact path="/products" component={ProductPage} />
             <Route exact path="/admin" component={AdminPage} />
             <Route exact path="/contact" component={ContactPage} />
-            <Route exact path="/PayOnDelivery" component={PayOnDelivery} />Order
-            <Route exact path="/Order" component={Order} /> 
-            <Route exact path="/Orders" component={Orders} /> 
-            <Route exact path="/Typeofpay" component={Typeofpay} />
-            <Route exact path="/Paynow" component={Paynow} /> 
+            <Route
+              exact
+              path="/PayOnDelivery"
+              component={PaymentDeliveryPage}
+            />
+            Order
+            <Route exact path="/Order" component={Order} />
+            <Route exact path="/Orders" component={Orders} />
+            <Route exact path="/Typeofpay" component={PaymentTypePage} />
+            <Route exact path="/Paynow" component={PaymentNowPage} />
           </Switch>
         </BrowserRouter>
       </Fragment>
