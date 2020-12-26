@@ -33,7 +33,7 @@ const ContactPage = () => {
                 </i>{" "}
                 <br></br>
                 <br></br>
-                <p>Instagram</p>
+                <h4>Instagram</h4>
                 <span>
                   {" "}
                   <a
