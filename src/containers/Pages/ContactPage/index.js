@@ -33,7 +33,7 @@ const ContactPage = () => {
                 </i>{" "}
                 <br></br>
                 <br></br>
-                <p>Instagram</p>
+                <h4>Instagram</h4>
                 <span>
                   {" "}
                   <a
@@ -42,7 +42,7 @@ const ContactPage = () => {
                     target="blank"
                     className="clr"
                   >
-                    <i className="fa fa-instagram" aria-hidden="true"></i>
+                    <i className="fa fa-instagram" aria-hidden="true"></i> -trendy_jeo
                   </a>
                 </span>
               </div>
