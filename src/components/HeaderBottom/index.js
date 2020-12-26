@@ -26,7 +26,7 @@ const HeaderBottom = (props) => {
               <div className="logo">
                 <NavLink to="/">
                   {/* <h1>TrendyJeo</h1> */}
-                  <img src={logo} alt="top" height="80px" width="150px"/>
+                  <img src={logo} alt="top" />
                 </NavLink>
               </div>
             </div>
