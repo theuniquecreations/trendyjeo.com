@@ -26,7 +26,11 @@ const HeaderBottom = (props) => {
               <div className="logo">
                 <NavLink to="/">
                   {/* <h1>TrendyJeo</h1> */}
-                  <img src={logo} alt="top" height="75px" />
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/fbclouddb.appspot.com/o/TRENDYJEO%2Flogo.jpeg?alt=media&token=031f97fa-27b1-467a-acb0-d84d7bfb557d"
+                    alt="top"
+                    height="75px"
+                  />
                 </NavLink>
               </div>
             </div>
