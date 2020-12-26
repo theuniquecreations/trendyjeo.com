@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import Card from "./CardUI";
-import Logo from "../../assets/try.jpeg";
-import Logo1 from "../../assets/3.jpg";
-import Logo2 from "../../assets/5.jpg";
+
+import cup from "../../images/cup.jpg";
+import hand from "../../images/hand.jpg";
+import phone from "../../images/phone.jpg";
+import photo from "../../images/photo.jpg";
+import pillow from "../../images/pillow.jpg";
+import tshirt from "../../images/tshirt.jpg";
+import key from "../../images/key.jpg";
+import digit from "../../images/digit.jpg";
 
 class Cards extends Component {
   one = "This is Photo painting";
@@ -13,28 +19,28 @@ class Cards extends Component {
       <div className="container-fluid d-flex justify-content-center">
         <div className="row">
           <div className="col-md-3">
-            <Card img={Logo} title="Photo" des={this.one} />
+            <Card img={cup} title="Mug" />
           </div>
           <div className="col-md-3">
-            <Card img={Logo1} title="Pillow" des={this.two} />
+            <Card img={hand} title="Hand made craft"   />
           </div>
           <div className="col-md-3">
-            <Card img={Logo2} title="Cup" des={this.three} />
+            <Card img={phone} title="Mobile Case"   />
           </div>
           <div className="col-md-3">
-            <Card img={Logo} title="Photo" des={this.one} />
+            <Card img={photo} title="Photo Frame"   />
+          </div> 
+          <div className="col-md-3">
+            <Card img={pillow} title="Pillow"  />
           </div>
           <div className="col-md-3">
-            <Card img={Logo1} title="Pillow" des={this.two} />
+            <Card img={tshirt} title="T-Shirt"  />
           </div>
           <div className="col-md-3">
-            <Card img={Logo2} title="Cup" des={this.three} />
+            <Card img={key} title="Key Chain"  />
           </div>
           <div className="col-md-3">
-            <Card img={Logo2} title="Cup" des={this.three} />
-          </div>
-          <div className="col-md-3">
-            <Card img={Logo2} title="Cup" des={this.three} />
+            <Card img={digit} title="Digital Oil Painting"   />
           </div>
         </div>
       </div>

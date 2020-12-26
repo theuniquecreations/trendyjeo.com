@@ -1,6 +1,7 @@
 
 import React, { useEffect } from "react";
 import { app } from "../scripts/fbase";
+import "./admin.css";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
 
@@ -53,8 +54,12 @@ function Appps() {
   return (
     <>
     <div>
-     <Link to="/Order" className="btn btn-outline-success">Pay Now</Link><br></br>
-     <Link to="/Orders" className="btn btn-outline-success">Pay On Delivery</Link>
+    {/* <div class="btn-group btn-group-toggle " data-toggle="buttons">
+    <label class="btn btn-secondary active">
+       <button   class="rounded-pill btn btn-outline-warning cent">All Products</button></label></div> */}
+
+     <Link to="/Order" className="btn btn-secondary sps border border-white rounded-pill">Pay Now</Link><br></br>
+     <Link to="/Orders" className="btn btn-secondary sps border border-white rounded-pill">Pay On Delivery</Link>
      </div>
       <form onSubmit={onSubmit}>
         <input type="file" onChange={onFileChange} /><br></br>
@@ -75,17 +80,17 @@ function Appps() {
       <br></br> 
      
        
-      <ul>
+      <ul className="row pd">
         {users.map((user) => {
           return (
-				<div key={user.name} className="row">
+				<div key={user.name}  >
 					<div>
 						<img width="100" height="100" src={user.avatar} alt={user.name} />
 						<br></br>
 						<h1>---</h1>
 					</div>
 					<div>
-						<h1>{user.name}</h1>
+						<p>{user.name}</p>
 						<p>Rs..{user.phno}</p>
 					 
 						{/* <button onClick={deleteTodo}>Delete</button> */}
