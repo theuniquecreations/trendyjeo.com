@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { app } from "../scripts/fbase";
 import "./admin.css";
+ 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
 
@@ -46,11 +47,48 @@ function Appps() {
     };
     fetchUsers();
   }, []);
-  const deleteTodo =  async(e) => {
-    const todoRef =db.database().ref('users').child(users.id);
-    todoRef.remove();
-  };
 
+
+  const deleteTodo = async () => {
+    /*const usersCollection = await db.collection("users") .where('name','==',"").get();
+      setUsers(
+        usersCollection.docs.map((doc) => {
+          return doc.data();
+        })
+      );*/
+  };
+  /*const deleteTodo = async () => {
+    
+     const d=db.firestore()
+     d.collection('users').doc("0").set({...users.id})
+  };
+  const deleteTodo =  async() => {
+    db
+    .collection('users')
+    .doc(username)
+    .delete()
+    .then(() => {
+      console.log('User deleted!');
+    });
+  };*/
+  const deleteImage = (id) => {
+    const storageRef = db .storage().ref("images").child(id);
+    const imageRef = db.database().ref("images").child("daily").child(id);
+    storageRef.delete().then(() => {
+      imageRef.remove();
+    });
+  };
+  useEffect(() => {
+    /*getImageUrl();*/
+  }, []);
+
+  const completeTodo = () => {
+    const todoRef = app.database().ref('users').child(users.id);
+    todoRef.update({
+      complete: !users.complete,
+    });
+  };
+ 
   return (
     <>
     <div>
@@ -90,10 +128,10 @@ function Appps() {
 						<h1>---</h1>
 					</div>
 					<div>
-						<p>{user.name}</p>
+						<p className={users.complete ? "complete":""} >{user.name}</p>
 						<p>Rs..{user.phno}</p>
 					 
-						{/* <button onClick={deleteTodo}>Delete</button> */}
+					  {/* <button onClick={deleteTodo}>Delete</button>  */}
 					</div>
 				</div>
 			);

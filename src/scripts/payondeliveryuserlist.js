@@ -123,6 +123,7 @@ function PayOnDeliveryOrder()  {
                                  
 								<p>Street : {user.address}</p> 
 								<p>City : {user.city}</p>   
+								<p>Pin Code : {user.pin}</p>  
 								{/* <Link to="/products" className="btn btn-outline-success">
 									item
 								</Link> */}

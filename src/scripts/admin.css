@@ -2,8 +2,13 @@
     width: 200px;
 }
 .pd{
-    padding: 20px;
+    padding: 60px;
+    padding-left:20px ;
 }
 .tp{
     padding-top:20px ;
+}
+
+.complete{
+    text-decoration: line-through;
 }
