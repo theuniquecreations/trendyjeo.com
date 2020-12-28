@@ -83,7 +83,7 @@ function Paynow() {
           
              <input type="file" onChange={onFileChange}  class="form-control-file" required/>
             <br></br>
-            <select name="select" class="form-control"  required>
+            {/* <select name="select" class="form-control"  required>
             <option value="" >Catogery</option>
           <option value="cup">Mug</option>
 				<option  value="phone case">Phone case</option>
@@ -91,7 +91,8 @@ function Paynow() {
 				<option value="t-shirt">T-shirt</option>
         <option value="photo">Photo frame</option>
 				<option value="hand">Hand made craft</option>
-            </select>
+            </select> */}
+            <input type="text" name="select" placeholder="Eg.. Mug or Pillow"  class="form-control" required/>
             <br></br>
             <input type="text" name="username" placeholder="Name" class="form-control" required/>
             <br></br>

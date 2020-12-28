@@ -124,7 +124,7 @@ function PayNowOrder() {
 							City :	<p className="fnt"> {user.city}</p> 
 							Pin code :	<p className="fnt"> {user.pin}</p> 
 
-							<h1>-----------</h1>
+							<h1>------</h1>
 						 
 							
 							 
