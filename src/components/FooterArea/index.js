@@ -16,10 +16,12 @@ const footerLinks = [
   {
     title: "Products",
     menus: [
-      { name: "Handmade", route: "products" },
+      { name: "Mug", route: "products" },
       { name: "Pillow", route: "products" },
-      { name: "Cup", route: "products" },
-      { name: "Custom", route: "products" },
+      { name: "Photo frame", route: "products" },
+      { name: "Mobilecase", route: "products" },
+      { name: "T shirt", route: "products" },
+      { name: "Hand made craft", route: "products" },
     ],
   },
   {

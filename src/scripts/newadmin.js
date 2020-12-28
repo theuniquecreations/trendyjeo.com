@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { app } from "../scripts/fbase";
 import "./admin.css";
+ 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
 
@@ -46,11 +47,48 @@ function Appps() {
     };
     fetchUsers();
   }, []);
-  const deleteTodo =  async(e) => {
-    const todoRef =db.database().ref('users').child(users.id);
-    todoRef.remove();
-  };
 
+
+  const deleteTodo = async () => {
+    /*const usersCollection = await db.collection("users") .where('name','==',"").get();
+      setUsers(
+        usersCollection.docs.map((doc) => {
+          return doc.data();
+        })
+      );*/
+  };
+  /*const deleteTodo = async () => {
+    
+     const d=db.firestore()
+     d.collection('users').doc("0").set({...users.id})
+  };
+  const deleteTodo =  async() => {
+    db
+    .collection('users')
+    .doc(username)
+    .delete()
+    .then(() => {
+      console.log('User deleted!');
+    });
+  };*/
+  const deleteImage = (id) => {
+    const storageRef = db .storage().ref("images").child(id);
+    const imageRef = db.database().ref("images").child("daily").child(id);
+    storageRef.delete().then(() => {
+      imageRef.remove();
+    });
+  };
+  useEffect(() => {
+    /*getImageUrl();*/
+  }, []);
+
+  const completeTodo = () => {
+    const todoRef = app.database().ref('users').child(users.id);
+    todoRef.update({
+      complete: !users.complete,
+    });
+  };
+ 
   return (
     <>
     <div>
@@ -62,12 +100,12 @@ function Appps() {
      <Link to="/Orders" className="btn btn-secondary sps border border-white rounded-pill">Pay On Delivery</Link>
      </div>
       <form onSubmit={onSubmit}>
-        <input type="file" onChange={onFileChange} /><br></br>
-        <input type="text" name="username" placeholder="Name" /><br></br>
+        <input type="file" onChange={onFileChange} class="form-control-file" required /><br></br>
+        <input type="text" name="username" placeholder="Name" class="form-control" required/><br></br>
      
-        <input type="text" name="phno" placeholder="Rs." /><br></br>
-        <select name="select">
-				<option value="None">Catogery</option>
+        <input type="text" name="phno" placeholder="Rs." class="form-control" required/><br></br>
+        <select name="select" class="form-control" required>
+				<option value="">Catogery</option>
 				<option value="cup">Mug</option>
 				<option  value="phone case">Phone case</option>
         <option value="pillow">Pillow</option>
@@ -75,7 +113,7 @@ function Appps() {
         <option value="photo">Photo frame</option>
 				<option value="hand">Hand made craft</option>
 				</select><br></br>
-        <button>Submit</button><br></br>
+        <button class="btn btn-primary mb-2">Submit</button><br></br>
       </form><br></br>
       <br></br> 
      
@@ -87,13 +125,13 @@ function Appps() {
 					<div>
 						<img width="100" height="100" src={user.avatar} alt={user.name} />
 						<br></br>
-						<h1>---</h1>
+						
 					</div>
 					<div>
-						<p>{user.name}</p>
+						<p className={users.complete ? "complete":""} >{user.name}</p>
 						<p>Rs..{user.phno}</p>
-					 
-						{/* <button onClick={deleteTodo}>Delete</button> */}
+            {/* <h1>----</h1> */}
+					  {/* <button onClick={deleteTodo}>Delete</button>  */}
 					</div>
 				</div>
 			);
