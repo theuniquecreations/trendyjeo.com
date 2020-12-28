@@ -100,12 +100,12 @@ function Appps() {
      <Link to="/Orders" className="btn btn-secondary sps border border-white rounded-pill">Pay On Delivery</Link>
      </div>
       <form onSubmit={onSubmit}>
-        <input type="file" onChange={onFileChange} /><br></br>
-        <input type="text" name="username" placeholder="Name" /><br></br>
+        <input type="file" onChange={onFileChange} class="form-control-file" required /><br></br>
+        <input type="text" name="username" placeholder="Name" class="form-control" required/><br></br>
      
-        <input type="text" name="phno" placeholder="Rs." /><br></br>
-        <select name="select">
-				<option value="None">Catogery</option>
+        <input type="text" name="phno" placeholder="Rs." class="form-control" required/><br></br>
+        <select name="select" class="form-control" required>
+				<option value="">Catogery</option>
 				<option value="cup">Mug</option>
 				<option  value="phone case">Phone case</option>
         <option value="pillow">Pillow</option>
@@ -113,7 +113,7 @@ function Appps() {
         <option value="photo">Photo frame</option>
 				<option value="hand">Hand made craft</option>
 				</select><br></br>
-        <button>Submit</button><br></br>
+        <button class="btn btn-primary mb-2">Submit</button><br></br>
       </form><br></br>
       <br></br> 
      
@@ -125,12 +125,12 @@ function Appps() {
 					<div>
 						<img width="100" height="100" src={user.avatar} alt={user.name} />
 						<br></br>
-						<h1>---</h1>
+						
 					</div>
 					<div>
 						<p className={users.complete ? "complete":""} >{user.name}</p>
 						<p>Rs..{user.phno}</p>
-					 
+            {/* <h1>----</h1> */}
 					  {/* <button onClick={deleteTodo}>Delete</button>  */}
 					</div>
 				</div>
