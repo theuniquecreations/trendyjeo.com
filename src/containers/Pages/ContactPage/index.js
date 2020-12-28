@@ -21,16 +21,19 @@ const ContactPage = () => {
               <div className="contactUsInfo mt-10">
                 <h3>Contact me</h3>
                 <h4>Phone</h4>
+                <div className="si">
                 <i class="fa fa-phone" aria-hidden="true">
                   {" "}
                   +91-9345495954{" "}
-                </i>
+                </i></div>
                 <br></br>
                 <h4>Email</h4>
-                <i class="fa fa-envelope" aria-hidden="true">
+                <div className="si">
+                <i class="fa fa-envelope" aria-hidden="true"> 
+                
                   {" "}
                   trendyjeo@gmail.com{" "}
-                </i>{" "}
+                </i></div>
                 <br></br>
                 <br></br>
                 <h4>Instagram</h4>
@@ -42,7 +45,20 @@ const ContactPage = () => {
                     target="blank"
                     className="clr"
                   >
-                    <i className="fa fa-instagram" aria-hidden="true"></i> -trendy_jeo
+                    <div className="si">
+                    <i className="fa fa-instagram" aria-hidden="true" >  Trendy jeo</i> </div>
+                  </a>
+                </span>
+                <h4>Facebook</h4>
+                <span>
+                  {" "}
+                  <a
+                    href="https://m.facebook.com/AntoBlobinJeo/?ref=bookmarks"
+                    className="text-white"
+                    target="blank"
+                    className="clr"
+                  >
+                   <div className="si">  <i class="fa fa-facebook-square" aria-hidden="true"> Trendy jeo</i> </div>
                   </a>
                 </span>
               </div>
