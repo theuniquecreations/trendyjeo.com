@@ -50,8 +50,13 @@ function Paynow() {
       address: address,
       type: select,
       city: city,
-      pin:pin
-    });
+      pin:pin,
+
+      active: 1,
+      createdby: "TrendyJeo",
+      createddate: new Date().toLocaleString(),
+  });
+  window.location.reload(false);
   };
 
   useEffect(() => {
@@ -79,6 +84,7 @@ function Paynow() {
     <>
       <div>
         <div>
+         
           <form onSubmit={onSubmit}>
           
              <input type="file" onChange={onFileChange}  class="form-control-file" required/>
@@ -114,9 +120,9 @@ function Paynow() {
            
             <h1 className="size">Upload Payment Screenshot</h1> 
             <input type="file" onChange={onFileChangescreen} class="form-control-file" required/> 
-            <br></br>
+         <br></br>
             <button class="btn btn-primary mb-2">Submit</button>
-            <br></br>
+            
           </form>
         </div>
         <div></div>

@@ -16,14 +16,14 @@ function Appps() {
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);  
     setFileUrl(await fileRef.getDownloadURL());
-  };
+  }; 
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const username = e.target.username.value;
     const phno = e.target.phno.value;
     const select = e.target.select.value;
-    if (!username||!phno || !fileUrl) {
+    if (!username) {
       return;
     }
     
@@ -32,8 +32,12 @@ function Appps() {
       avatar: fileUrl,
       phno:phno,
       type:select,
+
+      active: 1,
+        createdby: "TrendyJeo",
+        createddate: new Date().toLocaleString(),
     });
-    
+    window.location.reload(false);
   };
 
   useEffect(() => {
@@ -49,13 +53,22 @@ function Appps() {
   }, []);
 
 
-  const deleteTodo = async () => {
-    /*const usersCollection = await db.collection("users") .where('name','==',"").get();
-      setUsers(
-        usersCollection.docs.map((doc) => {
-          return doc.data();
-        })
-      );*/
+  const deleteTodo = async (e) => {
+    
+    const username = e.target.username;
+    const phno = e.target.phno;
+    const select = e.target.select;
+    if (!username) {
+      return ;
+    }
+     await db.collection("users").doc(username).delete();
+    
+     const doc = await this.noteRef.where('users', '==', username).get();
+     doc.forEach(element => {
+         element.ref.delete();
+         console.log(`deleted: ${element.id}`);
+     });
+ 
   };
   /*const deleteTodo = async () => {
     
@@ -131,7 +144,7 @@ function Appps() {
 						<p className={users.complete ? "complete":""} >{user.name}</p>
 						<p>Rs..{user.phno}</p>
             {/* <h1>----</h1> */}
-					  {/* <button onClick={deleteTodo}>Delete</button>  */}
+					   <button onClick={deleteTodo}>Delete</button>   
 					</div>
 				</div>
 			);

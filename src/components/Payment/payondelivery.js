@@ -35,8 +35,13 @@ function PayOnDelivery() {
       address: address,
       type: select,
       city: city,
-      pin:pin
-    });
+      pin:pin,
+    
+      active: 1,
+      createdby: "TrendyJeo",
+      createddate: new Date().toLocaleString(),
+  });
+  window.location.reload(false);
   };
 
   useEffect(() => {

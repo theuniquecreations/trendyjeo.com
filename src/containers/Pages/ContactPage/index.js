@@ -34,7 +34,7 @@ const ContactPage = () => {
                   {" "}
                   trendyjeo@gmail.com{" "}
                 </i></div>
-                <br></br>
+               
                 <br></br>
                 <h4>Instagram</h4>
                 <span>
@@ -48,7 +48,7 @@ const ContactPage = () => {
                     <div className="si">
                     <i className="fa fa-instagram" aria-hidden="true" >  Trendy jeo</i> </div>
                   </a>
-                </span>
+                </span> <br></br>
                 <h4>Facebook</h4>
                 <span>
                   {" "}
@@ -60,9 +60,10 @@ const ContactPage = () => {
                   >
                    <div className="si">  <i class="fa fa-facebook-square" aria-hidden="true"> Trendy jeo</i> </div>
                   </a>
-                </span>
+                </span>   <br></br>
               </div>
             </div>
+         
             <div className="col-lg-7">
               <div className="contactUSForm">
                 <h3> Gifts that makeyour memories </h3>
