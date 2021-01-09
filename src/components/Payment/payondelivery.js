@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { app } from "../../scripts/fbase";
 import "./style.scss";
+import uuid from "react-uuid";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const db = app.firestore();
 
@@ -28,7 +29,13 @@ function PayOnDelivery() {
       return;
     }
 
-    await db.collection("payondelivery").doc(username).set({
+    await db
+    .collection("Trendyjeo")
+    .doc("PayOn")
+	.collection("Users")
+	.doc(uuid())
+	.set({
+		id: uuid(),
       name: username,
       avatar: fileUrl,
       phno: phno,
@@ -38,7 +45,7 @@ function PayOnDelivery() {
       pin:pin,
     
       active: 1,
-      createdby: "TrendyJeo",
+      createdby: "Trendyjeo",
       createddate: new Date().toLocaleString(),
   });
   window.location.reload(false);
@@ -46,7 +53,12 @@ function PayOnDelivery() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("payondelivery").get();
+      const usersCollection = await db
+      .collection("Trendyjeo")
+        .doc("PayOn")
+        .collection("Users")
+        .orderBy("createddate", "desc")
+      .get();
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();

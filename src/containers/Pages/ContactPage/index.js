@@ -20,21 +20,49 @@ const ContactPage = () => {
             <div className="col-lg-5">
               <div className="contactUsInfo mt-10">
                 <h3>Contact me</h3>
-                <h4>Phone</h4>
+                {/* <h4>Phone</h4>
                 <div className="si">
-                <i class="fa fa-phone" aria-hidden="true">
+                <i class="fa fa-phone" aria-hidden="true" style={{color: "black"}}>
                   {" "}
                   +91-9345495954{" "}
                 </i></div>
-                <br></br>
+                <a href="tel:9345495954" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"><p class="call-button">Click to Call</p></a>
+                <br></br> */}
+{/*                 
                 <h4>Email</h4>
                 <div className="si">
                 <i class="fa fa-envelope" aria-hidden="true"> 
                 
                   {" "}
                   trendyjeo@gmail.com{" "}
-                </i></div>
-               
+                </i></div> */}
+                 <h4>Phone</h4>
+                <span>
+                  {" "}
+                  <a href="tel:+91-9345495954"> 
+                  <div className="si " style={{color: "black"}}>
+                  <i class="fa fa-phone" aria-hidden="true">
+                   
+                  +91-9345495954 </i> </div>
+                    </a>
+                
+                    
+                   
+                </span>
+                <br></br>
+                <h4>Email</h4>
+                <span>
+                  {" "}
+                  <a
+                    href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVVsvNnFQnZlqCFZQpPrntkHDzqWlpDgVDJQvvjWxNpjpfbTwhvQlmPGPgtWgwfqrQhcxG"
+                    className="text-white"
+                    target="blank"
+                    className="clr" 
+                  >
+                    <div className="si" style={{color: "black"}}>
+                    <i  class="fa fa-envelope" aria-hidden="true" >  trendyjeo@gmail.com</i> </div>
+                  </a>
+                </span>
                 <br></br>
                 <h4>Instagram</h4>
                 <span>
@@ -45,7 +73,7 @@ const ContactPage = () => {
                     target="blank"
                     className="clr"
                   >
-                    <div className="si">
+                    <div className="si" style={{color: "black"}}>
                     <i className="fa fa-instagram" aria-hidden="true" >  Trendy jeo</i> </div>
                   </a>
                 </span> <br></br>
@@ -58,7 +86,7 @@ const ContactPage = () => {
                     target="blank"
                     className="clr"
                   >
-                   <div className="si">  <i class="fa fa-facebook-square" aria-hidden="true"> Trendy jeo</i> </div>
+                   <div className="si" style={{color: "black"}}>  <i class="fa fa-facebook-square" aria-hidden="true"> Trendy jeo</i> </div>
                   </a>
                 </span>   <br></br>
               </div>

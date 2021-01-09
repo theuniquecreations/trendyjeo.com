@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { app } from "../../scripts/fbase";
 import "./style.scss";
+import uuid from "react-uuid";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import barcode from "../../images/barcode.jpg";
@@ -42,7 +43,13 @@ function Paynow() {
       return;
     }
 
-    await db.collection("paynow").doc(username).set({
+    await db
+    .collection("Trendyjeo")
+    .doc("PayNow")
+    .collection("Users")
+    .doc(uuid())
+		.set({
+			id: uuid(),
       name: username,
       avatar: fileUrl,
       avatarscreen: fileUrls,
@@ -53,7 +60,7 @@ function Paynow() {
       pin:pin,
 
       active: 1,
-      createdby: "TrendyJeo",
+      createdby: "Trendyjeo",
       createddate: new Date().toLocaleString(),
   });
   window.location.reload(false);
@@ -61,7 +68,12 @@ function Paynow() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("paynow").get();
+      const usersCollection = await db
+      .collection("Trendyjeo")
+        .doc("PayNow")
+        .collection("Users")
+        .orderBy("createddate", "desc")
+      .get();
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();

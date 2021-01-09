@@ -34,6 +34,41 @@ const heroSliders = [
     text: "Lets Review it",
     button: "Contact us now",
   },
+  {
+    images: "slideWrapperFour",
+    title: "Crafts",
+    subTitle: "",
+    text: "Lets Review it",
+    button: "Contact us now",
+  },
+  {
+    images: "slideWrapperFive",
+    title: "Crafts",
+    subTitle: "",
+    text: "Lets Review it",
+    button: "Contact us now",
+  },
+    {
+    images: "slideWrapperSix",
+    title: "Crafts",
+    subTitle: "",
+    text: "Lets Review it",
+    button: "Contact us now",
+  },
+  {
+    images: "slideWrapperSeven",
+    title: "Crafts",
+    subTitle: "",
+    text: "Lets Review it",
+    button: "Contact us now",
+  },
+  {
+    images: "slideWrapperTen",
+    title: "Crafts",
+    subTitle: "",
+    text: "Lets Review it",
+    button: "Contact us now",
+  },
 ];
 
 const services = [
@@ -49,7 +84,7 @@ const services = [
     content:
       "It is a long established fact that a reader will be distracted by the readable content of ",
   },
-  {
+ /* {
     icon: "flaticon-employee",
     title: "Business Law",
     content:
@@ -72,7 +107,7 @@ const services = [
     title: "Real Estate Law",
     content:
       "It is a long established fact that a reader will be distracted by the readable content of ",
-  },
+  },*/
 ];
 
 function HomePageOne() {

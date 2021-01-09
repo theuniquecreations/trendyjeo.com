@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { app } from "../scripts/fbase";
 import "./admin.css";
- 
+import uuid from "react-uuid";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 const db = app.firestore();
 
@@ -27,14 +27,20 @@ function Appps() {
       return;
     }
     
-    await db.collection("users").doc(username).set({
+    await db
+    .collection("Trendyjeo")
+    .doc("Admin")
+    .collection("AddItems")
+    .doc(uuid())
+    .set({
+      id: uuid(),
       name: username,
       avatar: fileUrl,
       phno:phno,
       type:select,
 
       active: 1,
-        createdby: "TrendyJeo",
+        createdby: "Trendyjeo",
         createddate: new Date().toLocaleString(),
     });
     window.location.reload(false);
@@ -42,7 +48,13 @@ function Appps() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("users")/*.where('type','==','cup')*/.get();
+      const usersCollection = await db
+      .collection("Trendyjeo")
+        .doc("Admin")
+        .collection("AddItems")
+        .orderBy("createddate", "desc")
+      /*.collection("users").where('type','==','cup')*/
+      .get();
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -55,20 +67,32 @@ function Appps() {
 
   const deleteTodo = async (e) => {
     
-    const username = e.target.username;
-    const phno = e.target.phno;
-    const select = e.target.select;
-    if (!username) {
-      return ;
-    }
-     await db.collection("users").doc(username).delete();
-    
-     const doc = await this.noteRef.where('users', '==', username).get();
-     doc.forEach(element => {
-         element.ref.delete();
-         console.log(`deleted: ${element.id}`);
-     });
- 
+      e.preventDefault();
+      const username = e.target.username.value;
+      const phno = e.target.phno.value;
+      const select = e.target.select.value;
+      if (!username) {
+        return;
+      }
+      
+      await db
+      .collection("Trendyjeo")
+      .doc("Admin")
+      .collection("AddItems")
+      .doc(uuid())
+      .set({
+        id: uuid(),
+        name: username,
+        avatar: fileUrl,
+        phno:phno,
+        type:select,
+  
+        active: 0,
+          createdby: "Trendyjeo",
+          createddate: new Date().toLocaleString(),
+      });
+      window.location.reload(false);
+   
   };
   /*const deleteTodo = async () => {
     
@@ -119,12 +143,16 @@ function Appps() {
         <input type="text" name="phno" placeholder="Rs." class="form-control" required/><br></br>
         <select name="select" class="form-control" required>
 				<option value="">Catogery</option>
-				<option value="cup">Mug</option>
-				<option  value="phone case">Phone case</option>
-        <option value="pillow">Pillow</option>
-				<option value="t-shirt">T-shirt</option>
-        <option value="photo">Photo frame</option>
-				<option value="hand">Hand made craft</option>
+				<option value="Pillow">Pillow</option>
+				<option  value="Mug">Mug</option>
+        <option value="Handmade_Gifts">Handmade Gifts</option>
+				<option value="Wall_Hanging_Frame">Wall Hanging Frame</option>
+        <option value="Table_Stand_Frame">Table Stand Frame</option>
+				<option value="Keychain">Keychain</option>
+        <option value="Magical_Gifts">Magical Gifts</option>
+        <option value="Customized_Gifts">Customized Gifts</option>
+        <option value="Compo_Gifts">Compo Gifts</option>
+        <option value="Other_Gifts">Other Gifts</option>
 				</select><br></br>
         <button class="btn btn-primary mb-2">Submit</button><br></br>
       </form><br></br>
@@ -144,7 +172,7 @@ function Appps() {
 						<p className={users.complete ? "complete":""} >{user.name}</p>
 						<p>Rs..{user.phno}</p>
             {/* <h1>----</h1> */}
-					   <button onClick={deleteTodo}>Delete</button>   
+					   {/* <button onClick={deleteTodo}>Delete</button>    */}
 					</div>
 				</div>
 			);
