@@ -46,7 +46,7 @@ const FooterArea = () => {
                 <Link to="/">
                   <h1>Trendy Jeo</h1>
                 </Link>
-                <p>Gift shop, Arts & crafts shop, Cultural gift shop</p>
+                <p>Customized Gifts & Hand Made gifts</p>
               </div>
             </div>
             {footerLinks.map((menu, i) => (

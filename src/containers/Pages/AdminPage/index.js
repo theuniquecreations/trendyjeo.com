@@ -24,12 +24,13 @@ const AdminPage = () => {
       <TodoList />
           <UploadImage />
            */}
-     <Appps/>
+            
+       <Appps/>  
         </div>
       </div>
       {/* <Formss/> */}
       <FooterArea />
-    </Fragment>
+    </Fragment> 
   );
 };
 export default AdminPage;
