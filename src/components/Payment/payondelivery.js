@@ -11,7 +11,7 @@ function PayOnDelivery() {
 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
-    const storageRef = app.storage().ref();
+    const storageRef = app.storage().ref("TRENDYJEO");
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
     setFileUrl(await fileRef.getDownloadURL());
@@ -30,35 +30,35 @@ function PayOnDelivery() {
     }
 
     await db
-    .collection("Trendyjeo")
-    .doc("PayOn")
-	.collection("Users")
-	.doc(uuid())
-	.set({
-		id: uuid(),
-      name: username,
-      avatar: fileUrl,
-      phno: phno,
-      address: address,
-      type: select,
-      city: city,
-      pin:pin,
-    
-      active: 1,
-      createdby: "Trendyjeo",
-      createddate: new Date().toLocaleString(),
-  });
-  window.location.reload(false);
+      .collection("Trendyjeo")
+      .doc("PayOn")
+      .collection("Users")
+      .doc(uuid())
+      .set({
+        id: uuid(),
+        name: username,
+        avatar: fileUrl,
+        phno: phno,
+        address: address,
+        type: select,
+        city: city,
+        pin: pin,
+
+        active: 1,
+        createdby: "Trendyjeo",
+        createddate: new Date().toLocaleString(),
+      });
+    window.location.reload(false);
   };
 
   useEffect(() => {
     const fetchUsers = async () => {
       const usersCollection = await db
-      .collection("Trendyjeo")
+        .collection("Trendyjeo")
         .doc("PayOn")
         .collection("Users")
         .orderBy("createddate", "desc")
-      .get();
+        .get();
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -75,7 +75,12 @@ function PayOnDelivery() {
   return (
     <>
       <form onSubmit={onSubmit}>
-        <input type="file" onChange={onFileChange} class="form-control-file" required/>
+        <input
+          type="file"
+          onChange={onFileChange}
+          class="form-control-file"
+          required
+        />
         <br></br>
         {/* <select name="select" class="form-control" required>
           <option value="" >Catogery</option>
@@ -86,20 +91,58 @@ function PayOnDelivery() {
         <option value="photo">Photo frame</option>
 				<option value="hand">Hand made craft</option>
         </select> */}
-         <input type="text" name="select" placeholder="Eg.. Mug or Pillow" class="form-control" required/>
+        <input
+          type="text"
+          name="select"
+          placeholder="Eg.. Mug or Pillow"
+          class="form-control"
+          required
+        />
         <br></br>
-        <input type="text" name="username" placeholder="Name" class="form-control" required/>
+        <input
+          type="text"
+          name="username"
+          placeholder="Name"
+          class="form-control"
+          required
+        />
         <br></br>
 
-        <input type="text" name="phno" placeholder="Number" class="form-control" required/>
+        <input
+          type="text"
+          name="phno"
+          placeholder="Number"
+          class="form-control"
+          required
+        />
         <br></br>
-        <input type="text" name="address" placeholder="Street" class="form-control" required/>
+        <input
+          type="text"
+          name="address"
+          placeholder="Street"
+          class="form-control"
+          required
+        />
         <br></br>
         <div class="row">
-    <div class="col">
-        <input type="text" name="city" placeholder="City" class="form-control" required/></div>
-        <div class="col">
-        <input type="text" name="pin" placeholder="Pin Code" class="form-control" required/></div>
+          <div class="col">
+            <input
+              type="text"
+              name="city"
+              placeholder="City"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              name="pin"
+              placeholder="Pin Code"
+              class="form-control"
+              required
+            />
+          </div>
         </div>
         <br></br>
         <br></br>

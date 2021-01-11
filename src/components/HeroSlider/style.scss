@@ -9,8 +9,10 @@
     @media (max-width: 768px) {
       height: 450px;
     }
+
     &.slideWrapperOne {
       background: url(../../images/Pillow.jpeg) no-repeat center center;
+      border-radius: 5px;
     }
     &.slideWrapperTwo {
       background: url(../../images/Mug.jpeg) no-repeat center center;
@@ -19,28 +21,27 @@
       background: url(../../images/HandmadeGifts.jpeg) no-repeat center center;
     }
     &.slideWrapperFour {
-      background: url(../../images/Wallhangingframe.jpeg) no-repeat center center;
+      background: url(../../images/Wallhangingframe.jpeg) no-repeat center
+        center;
     }
     &.slideWrapperFive {
       background: url(../../images/TableStandFrame.jpeg) no-repeat center center;
     }
-   /* &.slideWrapperFive {
-      background: url(../../images/Keychain.jpeg) no-repeat center center;  
+    &.slideWrapperSix {
+      background: url(../../images/Keychain.jpeg) no-repeat center center;
     }
-    &.slideWrapperFive {
+    &.slideWrapperSeven {
       background: url(../../images/CustomizedGifts.jpeg) no-repeat center center;
     }
-    &.slideWrapperFive {
+    &.slideWrapperEight {
       background: url(../../images/ConboGifts.jpeg) no-repeat center center;
     }
-    &.slideWrapperFive {
+    &.slideWrapperNine {
       background: url(../../images/OtherGifts.jpeg) no-repeat center center;
     }
-     &.slideWrapperFive {
+    &.slideWrapperTen {
       background: url(../../images/MagicalGifts.jpeg) no-repeat center center;
-    }*/
-
-
+    }
     .sliderContent {
       position: absolute;
       left: 0;

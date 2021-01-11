@@ -177,7 +177,7 @@ function Appps() {
 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
-    const storageRef = app.storage().ref();
+    const storageRef = app.storage().ref("TRENDYJEO");
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
     setFileUrl(await fileRef.getDownloadURL());
