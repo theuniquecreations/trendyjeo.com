@@ -16,12 +16,16 @@ const footerLinks = [
   {
     title: "Products",
     menus: [
-      { name: "Mug", route: "products" },
       { name: "Pillow", route: "products" },
-      { name: "Photo frame", route: "products" },
-      { name: "Mobilecase", route: "products" },
-      { name: "T shirt", route: "products" },
-      { name: "Hand made craft", route: "products" },
+      { name: "Mug", route: "products" },
+      { name: "Handmade Gifts frame", route: "products" },
+      { name: "Wall Hanging Frame", route: "products" },
+      { name: "Table Stand Frame", route: "products" },
+      { name: "Keychain", route: "products" },
+      { name: "Magical Gifts", route: "products" },
+      { name: "Customized Gifts", route: "products" },
+      { name: "Compo Gifts", route: "products" },
+      { name: "Other Gifts", route: "products" },
     ],
   },
   {

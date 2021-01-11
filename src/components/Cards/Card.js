@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import Card from "./CardUI";
 
-import Pillow from "../../images/Pillow.jpeg";
-import Mug from "../../images/Mug.jpeg";
-import Handmade  from "../../images/HandmadeGifts.jpeg";
-import Wall  from "../../images/Wallhangingframe.jpeg";
-import Table from "../../images/TableStandFrame.jpeg";
-import Keychain from "../../images/Keychain.jpeg";
-import Customized from "../../images/CustomizedGifts.jpeg";
-import Combo  from "../../images/ConboGifts.jpeg";
-import Other  from "../../images/OtherGifts.jpeg";
-import Magical  from "../../images/MagicalGifts.jpeg";
+import Pillow from "../../images/Pillow.jpg";
+import Mug from "../../images/Mug.jpg";
+import Handmade  from "../../images/HandmadeGifts.jpg";
+import Wall  from "../../images/Wallhangingframe.jpg";
+import Table from "../../images/TableStandFrame.jpg";
+import Keychain from "../../images/Keychain.jpg";
+import Customized from "../../images/CustomizedGifts.jpg";
+import Combo  from "../../images/ConboGifts.jpg";
+import Other  from "../../images/OtherGifts.jpg";
+import Magical  from "../../images/MagicalGifts.jpg";
 
 class Cards extends Component {
   one = "This is Photo painting";
