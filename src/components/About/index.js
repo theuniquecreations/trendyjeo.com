@@ -18,7 +18,9 @@ const About = ({
           <div className="col-lg-12">
             <div className="aboutContent">
               {subTitle && <span>{subTitle}</span>}
+
               <h2>{title}</h2>
+              <img src={images} height="300" />
               {pragraphs.map((pragraph, i) => (
                 <p key={i}>{pragraph.text}</p>
               ))}

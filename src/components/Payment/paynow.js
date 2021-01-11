@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { app } from "../../scripts/fbase";
 import "./style.scss";
+import uuid from "react-uuid";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import barcode from "../../images/barcode.jpg";
@@ -13,7 +14,7 @@ function Paynow() {
 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
-    const storageRef = app.storage().ref();
+    const storageRef = app.storage().ref("TRENDYJEO");
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
     setFileUrl(await fileRef.getDownloadURL());
@@ -24,7 +25,7 @@ function Paynow() {
 
   const onFileChangescreen = async (e) => {
     const file = e.target.files[0];
-    const storageRef = app.storage().ref();
+    const storageRef = app.storage().ref("TRENDYJEO");
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
     setFileUrls(await fileRef.getDownloadURL());
@@ -42,21 +43,37 @@ function Paynow() {
       return;
     }
 
-    await db.collection("paynow").doc(username).set({
-      name: username,
-      avatar: fileUrl,
-      avatarscreen: fileUrls,
-      phno: phno,
-      address: address,
-      type: select,
-      city: city,
-      pin:pin
-    });
+    await db
+      .collection("Trendyjeo")
+      .doc("PayNow")
+      .collection("Users")
+      .doc(uuid())
+      .set({
+        id: uuid(),
+        name: username,
+        avatar: fileUrl,
+        avatarscreen: fileUrls,
+        phno: phno,
+        address: address,
+        type: select,
+        city: city,
+        pin: pin,
+
+        active: 1,
+        createdby: "Trendyjeo",
+        createddate: new Date().toLocaleString(),
+      });
+    window.location.reload(false);
   };
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const usersCollection = await db.collection("paynow").get();
+      const usersCollection = await db
+        .collection("Trendyjeo")
+        .doc("PayNow")
+        .collection("Users")
+        .orderBy("createddate", "desc")
+        .get();
       setUsers(
         usersCollection.docs.map((doc) => {
           return doc.data();
@@ -80,8 +97,12 @@ function Paynow() {
       <div>
         <div>
           <form onSubmit={onSubmit}>
-          
-             <input type="file" onChange={onFileChange}  class="form-control-file" required/>
+            <input
+              type="file"
+              onChange={onFileChange}
+              class="form-control-file"
+              required
+            />
             <br></br>
             {/* <select name="select" class="form-control"  required>
             <option value="" >Catogery</option>
@@ -92,31 +113,85 @@ function Paynow() {
         <option value="photo">Photo frame</option>
 				<option value="hand">Hand made craft</option>
             </select> */}
-            <input type="text" name="select" placeholder="Eg.. Mug or Pillow"  class="form-control" required/>
+            <input
+              type="text"
+              name="select"
+              placeholder="Eg.. Mug or Pillow"
+              class="form-control"
+              required
+            />
             <br></br>
-            <input type="text" name="username" placeholder="Name" class="form-control" required/>
+            <input
+              type="text"
+              name="username"
+              placeholder="Name"
+              class="form-control"
+              required
+            />
             <br></br>
-            <input type="text" name="phno" placeholder="Number" class="form-control" required/>
+            <input
+              type="text"
+              name="phno"
+              placeholder="Number"
+              class="form-control"
+              required
+            />
             <br></br>
-            <input type="text" name="address" placeholder="Street" class="form-control" required/>
+            <input
+              type="text"
+              name="address"
+              placeholder="Street"
+              class="form-control"
+              required
+            />
             <br></br>
             <div class="row">
-    <div class="col">
-        <input type="text" name="city" placeholder="City" class="form-control" required/></div>
-        <div class="col">
-        <input type="text" name="pin" placeholder="Pin Code" class="form-control" required/></div>
-        </div> 
-          
+              <div class="col">
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="City"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  name="pin"
+                  placeholder="Pin Code"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+
             <h1 className="size">Please scan and Pay</h1>
-          
-              <img id="gpay" src={barcode} alt="barcode" height="150px" width="150px"/>
-             
-           
-            <h1 className="size">Upload Payment Screenshot</h1> 
-            <input type="file" onChange={onFileChangescreen} class="form-control-file" required/> 
+
+            <img
+              id="gpay"
+              src={barcode}
+              alt="barcode"
+              height="150px"
+              width="150px"
+            />
+
+            <h1 className="size">Upload Payment Screenshot</h1>
+            <input
+              type="file"
+              onChange={onFileChangescreen}
+              class="form-control-file"
+              required
+            />
             <br></br>
+            <a
+              href="upi://pay?pa=9791893532@oksbizaxis&amp;pn=trendyjeo&amp;cu=INR"
+              class="btn btn-primary mb-2"
+            >
+              Pay Now using UPI
+            </a>
+            <br />
             <button class="btn btn-primary mb-2">Submit</button>
-            <br></br>
           </form>
         </div>
         <div></div>

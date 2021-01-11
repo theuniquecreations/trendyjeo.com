@@ -12,53 +12,12 @@ function Appps() {
   const [fileUrl, setFileUrl] = React.useState(null);
   const [users, setUsers] = React.useState([]);
 
-  const tshirt = async () => {
+  const SelectAllItems = async (name) => {
+    console.log("alltems", name);
     const usersCollection = await db
-      .collection("users")
-      .where("type", "==", "t-shirt")
-      .get(); /*.orderBy('phno','asc').limit(6).get()*/
-    setUsers(
-      usersCollection.docs.map((doc) => {
-        return doc.data();
-      })
-    );
-  };
-  const cups = async () => {
-    const usersCollection = await db
-      .collection("users")
-      .where("type", "==", "cup")
-      .get(); /*.orderBy('phno','asc').limit(6).get()*/
-    setUsers(
-      usersCollection.docs.map((doc) => {
-        return doc.data();
-      })
-    );
-  };
-  const pillows = async () => {
-    const usersCollection = await db
-      .collection("users")
-      .where("type", "==", "pillow")
-      .get(); /*.orderBy('phno','asc').limit(6).get()*/
-    setUsers(
-      usersCollection.docs.map((doc) => {
-        return doc.data();
-      })
-    );
-  };
-  const all = async () => {
-    const usersCollection = await db
-      .collection("users")
-      .get(); /*.orderBy('phno','asc').limit(6).get()*/
-    setUsers(
-      usersCollection.docs.map((doc) => {
-        return doc.data();
-      })
-    );
-  };
-  const phone = async () => {
-    const usersCollection = await db
-      .collection("users")
-      .where("type", "==", "phone case")
+      .collection("Trendyjeo")
+      .doc("Admin")
+      .collection("AddItems")
       .get(); /*.orderBy('phno','asc').limit(6).get()*/
     setUsers(
       usersCollection.docs.map((doc) => {
@@ -67,10 +26,13 @@ function Appps() {
     );
   };
 
-  const photo = async () => {
+  const SelectItems = async (name) => {
     const usersCollection = await db
-      .collection("users")
-      .where("type", "==", "photo")
+      .collection("Trendyjeo")
+      .doc("Admin")
+      .collection("AddItems")
+
+      .where("type", "==", name)
       .get(); /*.orderBy('phno','asc').limit(6).get()*/
     setUsers(
       usersCollection.docs.map((doc) => {
@@ -78,21 +40,144 @@ function Appps() {
       })
     );
   };
-  const hand = async () => {
-    const usersCollection = await db
-      .collection("users")
-      .where("type", "==", "hand")
-      .get(); /*.orderBy('phno','asc').limit(6).get()*/
-    setUsers(
-      usersCollection.docs.map((doc) => {
-        return doc.data();
-      })
-    );
-  };
+
+  // const Pillow = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+
+  //     .where("type", "==", "Pillow")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+  // const Mug = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Mug")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+  // const Handmade_Gifts = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Handmade_Gifts")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+
+  // const Wall_Hanging_Frame = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Wall_Hanging_Frame")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+
+  // const Table_Stand_Frame = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Table_Stand_Frame")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+  // const Keychain = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Keychain")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+  // const Magical_Gifts = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Magical_Gifts")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+  // const Customized_Gifts = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Customized_Gifts")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+  // const Compo_Gifts = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Compo_Gifts")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
+  // const Other_Gifts = async () => {
+  //   const usersCollection = await db
+  //     .collection("Trendyjeo")
+  //     .doc("Admin")
+  //     .collection("AddItems")
+  //     .where("type", "==", "Other_Gifts")
+  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
+  //   setUsers(
+  //     usersCollection.docs.map((doc) => {
+  //       return doc.data();
+  //     })
+  //   );
+  // };
 
   const onFileChange = async (e) => {
     const file = e.target.files[0];
-    const storageRef = app.storage().ref();
+    const storageRef = app.storage().ref("TRENDYJEO");
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
     setFileUrl(await fileRef.getDownloadURL());
@@ -117,7 +202,10 @@ function Appps() {
   useEffect(() => {
     const fetchUsers = async () => {
       const usersCollection = await db
-        .collection("users")
+        .collection("Trendyjeo")
+        .doc("Admin")
+        .collection("AddItems")
+        .orderBy("createddate", "desc")
         .get(); /*.orderBy('phno','asc').limit(6).get()*/
       setUsers(
         usersCollection.docs.map((doc) => {
@@ -134,24 +222,29 @@ function Appps() {
 
   return (
     <>
+      <h1 className="catcontainer family">↓↓↓ Filter Products ↓↓↓</h1>
       <br></br>
       <div className="catcontainer">
         <label>
-          <button onClick={all} class="rounded-pill btncat btn-outline-warning">
+          <button
+            onClick={() => SelectAllItems("all")}
+            class="rounded-pill btncat btn-outline-warning"
+          >
             All Products
           </button>
         </label>
         <label>
           <button
-            onClick={hand}
+            onClick={() => SelectItems("Pillow")}
+            //  onClick={Pillow}
             class="rounded-pill btncat btn-outline-warning"
           >
-            Hand made craft
+            Pillow
           </button>
         </label>
         <label>
           <button
-            onClick={cups}
+            onClick={() => SelectItems("Mug")}
             class="rounded-pill btncat btn-outline-warning"
           >
             Mug
@@ -159,34 +252,74 @@ function Appps() {
         </label>
         <label>
           <button
-            onClick={tshirt}
+            onClick={() => SelectItems("Handmade_Gifts")}
+            // onClick={Handmade_Gifts}
             class="rounded-pill btncat btn-outline-warning"
           >
-            T-shirt
+            Handmade Gifts
           </button>
         </label>
         <label>
           <button
-            onClick={photo}
+            onClick={() => SelectItems("Wall_Hanging_Frame")}
+            //onClick={Wall_Hanging_Frame}
             class="rounded-pill btncat btn-outline-warning"
           >
-            Photo frame
+            Wall Hanging Frame
           </button>
         </label>
         <label>
           <button
-            onClick={phone}
+            onClick={() => SelectItems("Table_Stand_Frame")}
+            // onClick={Table_Stand_Frame}
             class="rounded-pill btncat btn-outline-warning "
           >
-            Mobilecase
+            Table Stand Frame
           </button>
         </label>
         <label>
           <button
-            onClick={pillows}
+            onClick={() => SelectItems("Keychain")}
+            // onClick={Keychain}
             class="rounded-pill btncat btn-outline-warning "
           >
-            Pillow
+            Keychain
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={() => SelectItems("Magical_Gifts")}
+            // onClick={Magical_Gifts}
+            class="rounded-pill btncat btn-outline-warning "
+          >
+            Magical Gifts
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={() => SelectItems("Customized_Gifts")}
+            // onClick={Customized_Gifts}
+            class="rounded-pill btncat btn-outline-warning "
+          >
+            Customized Gifts
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={() => SelectItems("Compo_Gifts")}
+            // onClick={Compo_Gifts}
+            class="rounded-pill btncat btn-outline-warning "
+          >
+            Compo Gifts
+          </button>
+        </label>
+        <label>
+          <button
+            onClick={() => SelectItems("Other_Gifts")}
+            //onClick={Other_Gifts}
+            class="rounded-pill btncat btn-outline-warning "
+          >
+            Other Gifts
           </button>
         </label>
       </div>

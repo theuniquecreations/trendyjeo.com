@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import Card from "./CardUI";
 
-import cup from "../../images/cup.jpg";
-import hand from "../../images/hand.jpg";
-import phone from "../../images/phone.jpg";
-import photo from "../../images/photo.jpg";
-import pillow from "../../images/pillow.jpg";
-import tshirt from "../../images/tshirt.jpg";
-import key from "../../images/key.jpg";
-import digit from "../../images/digit.jpg";
+import Pillow from "../../images/Pillow.jpeg";
+import Mug from "../../images/Mug.jpeg";
+import Handmade  from "../../images/HandmadeGifts.jpeg";
+import Wall  from "../../images/Wallhangingframe.jpeg";
+import Table from "../../images/TableStandFrame.jpeg";
+import Keychain from "../../images/Keychain.jpeg";
+import Customized from "../../images/CustomizedGifts.jpeg";
+import Combo  from "../../images/ConboGifts.jpeg";
+import Other  from "../../images/OtherGifts.jpeg";
+import Magical  from "../../images/MagicalGifts.jpeg";
 
 class Cards extends Component {
   one = "This is Photo painting";
@@ -19,28 +21,34 @@ class Cards extends Component {
       <div className="container-fluid d-flex justify-content-center">
         <div className="row">
           <div className="col-md-3">
-            <Card img={cup} title="Mug" />
+            <Card img={Pillow} title="Pillow" />
           </div>
           <div className="col-md-3">
-            <Card img={hand} title="Hand made craft"   />
+            <Card img={Mug} title="Mug"   />
           </div>
           <div className="col-md-3">
-            <Card img={phone} title="Mobile Case"   />
+            <Card img={Handmade} title="Handmade Gifts"   />
           </div>
           <div className="col-md-3">
-            <Card img={photo} title="Photo Frame"   />
+            <Card img={Wall} title="Wall Hanging Frame"   />
           </div> 
           <div className="col-md-3">
-            <Card img={pillow} title="Pillow"  />
+            <Card img={Table} title="Table Stand Frame"  />
           </div>
           <div className="col-md-3">
-            <Card img={tshirt} title="T-Shirt"  />
+            <Card img={Keychain} title="Keychain"  />
           </div>
           <div className="col-md-3">
-            <Card img={key} title="Key Chain"  />
+            <Card img={Customized} title="Customized Gifts"  />
           </div>
           <div className="col-md-3">
-            <Card img={digit} title="Digital Oil Painting"   />
+            <Card img={Combo} title="Combo Gifts"   />
+          </div>
+          <div className="col-md-3">
+            <Card img={Other} title="Other Gifts"   />
+          </div>
+          <div className="col-md-3">
+            <Card img={Magical} title="Magical Gifts"   />
           </div>
         </div>
       </div>
