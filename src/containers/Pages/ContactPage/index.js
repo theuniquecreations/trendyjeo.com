@@ -94,8 +94,15 @@ const ContactPage = () => {
          
             <div className="col-lg-7">
               <div className="contactUSForm">
-                <h3> Gifts that makeyour memories </h3>
-                <p>Gifts are a wonderful way of expressing our love. When you think of gifting your loved ones, no matter whatever is the occasion or wherever they are in the world, GiftsnIdeas is there to take care of your gifting need as its own and makes sure that your beloved friends or family members receive the best to make their day memorable at both your ends. We care for your feelings!!</p>
+                <h3> Address </h3>
+                <p className="sz">Shop No - 4 , <br></br>
+                Renuga Shopping Complex ,<br></br>
+                Peyode Junction, <br></br>
+                Sarel Road ,<br></br>
+                Kanyakumari ,<br></br>
+                Tamil Nadu, <br></br>
+                629203 
+</p>
               </div>
             </div>
           </div>
