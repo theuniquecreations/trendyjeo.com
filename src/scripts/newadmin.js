@@ -88,6 +88,7 @@ function Appps() {
         createdby: "Trendyjeo",
         createddate: new Date().toLocaleString(),
       });
+
     window.location.reload(false);
   };
   /*const deleteTodo = async () => {
