@@ -19,35 +19,36 @@ class Cards extends Component {
   render() {
     return (
       <div className="container-fluid d-flex justify-content-center">
-        <div className="row">
-          <div className="col-md-3">
+        <div className="row ph">
+          <div className="wd">
             <Card img={Pillow} title="Pillow" />
           </div>
-          <div className="col-md-3">
+          <div className="wd">
             <Card img={Mug} title="Mug"   />
           </div>
-          <div className="col-md-3">
+          <div className="wd">
             <Card img={Handmade} title="Handmade Gifts"   />
           </div>
-          <div className="col-md-3">
+          <div className="wd">
             <Card img={Wall} title="Wall Hanging Frame"   />
           </div> 
-          <div className="col-md-3">
+          <div className="wd">
             <Card img={Table} title="Table Stand Frame"  />
           </div>
-          <div className="col-md-3">
+          <div className="wd">
+            {/* col-md-3 */}
             <Card img={Keychain} title="Keychain"  />
           </div>
-          <div className="col-md-3">
+          <div className="wd">
             <Card img={Customized} title="Customized Gifts"  />
           </div>
-          <div className="col-md-3">
+          <div className="wd">
             <Card img={Combo} title="Combo Gifts"   />
           </div>
-          <div className="col-md-3">
+          <div className="wd">
             <Card img={Other} title="Other Gifts"   />
           </div>
-          <div className="col-md-3">
+          <div className="wd">
             <Card img={Magical} title="Magical Gifts"   />
           </div>
         </div>

@@ -343,9 +343,10 @@ function Appps() {
                         src={user.avatar}
                         alt={user.name}
                       />
-                      <h4 className="wrap">{user.name}</h4>
+                      {/* /*className="wrap" */}
+                      <p className="fon">{user.name}</p>
                       <div className="clearboth">
-                        <div className="floatleft">
+                        <div className="fontsi">{/* floatleft */}
                           <p className="bold">Rs..{user.phno}</p>
                         </div>
                         {/* <button onClick={deleteTodo}>Delete</button> */}
