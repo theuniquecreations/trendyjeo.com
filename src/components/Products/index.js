@@ -222,8 +222,8 @@ function Appps() {
 
   return (
     <>
-      <h1 className="catcontainer family">↓↓↓ Filter Products ↓↓↓</h1>
-      <br></br>
+      <h1 className="catcontainer family">Filter Products</h1>
+      
       <div className="catcontainer">
         <label>
           <button
