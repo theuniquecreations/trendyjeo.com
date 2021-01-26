@@ -46,11 +46,12 @@ class Cards extends Component {
             <Card img={Combo} title="Combo Gifts"   />
           </div>
           <div className="wd">
-            <Card img={Other} title="Other Gifts"   />
-          </div>
-          <div className="wd">
             <Card img={Magical} title="Magical Gifts"   />
           </div>
+          <div className="wd">
+            <Card img={Other} title="Other Gifts"   />
+          </div>
+          
         </div>
       </div>
     );
