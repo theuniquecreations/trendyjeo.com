@@ -122,6 +122,13 @@ function Appps() {
       complete: !users.complete,
     });
   };
+  const deleteTodos = async () => {
+    await db
+      .collection("Trendyjeo")
+      .doc("Admin")
+      .collection("AddItems")
+      .remove();
+  };
 
   return (
     <>
@@ -206,7 +213,7 @@ function Appps() {
                 <p className={users.complete ? "complete" : ""}>{user.name}</p>
                 <p>Rs..{user.phno}</p>
                 {/* <h1>----</h1> */}
-                {/* <button onClick={deleteTodo}>Delete</button>    */}
+                <button onClick={deleteTodos}>Delete</button>
               </div>
             </div>
           );

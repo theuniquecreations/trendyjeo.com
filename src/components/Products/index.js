@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { app } from "../../scripts/fbase";
 import FooterArea from "../FooterArea";
 import "./style.scss";
+import ReactStars from "react-rating-stars-component";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Checkout from "../Payment/payondelivery";
@@ -55,19 +56,19 @@ function Appps() {
   //     })
   //   );
   // };
-  // const Mug = async () => {
-  //   const usersCollection = await db
-  //     .collection("Trendyjeo")
-  //     .doc("Admin")
-  //     .collection("AddItems")
-  //     .where("type", "==", "Mug")
-  //     .get(); /*.orderBy('phno','asc').limit(6).get()*/
-  //   setUsers(
-  //     usersCollection.docs.map((doc) => {
-  //       return doc.data();
-  //     })
-  //   );
-  // };
+  /*const Mugss = async () => {
+    const usersCollection = await db
+      .collection("Trendyjeo")
+      .doc("Admin")
+      .collection("AddItems")
+      .where("username", "==", "Heart Handle With Magic Mug")
+      .remove(); /*.orderBy('phno','asc').limit(6).get()*/
+  /* setUsers(
+      usersCollection.docs.map((doc) => {
+        return doc.data();
+      })
+    );
+  };*/
   // const Handmade_Gifts = async () => {
   //   const usersCollection = await db
   //     .collection("Trendyjeo")
@@ -199,6 +200,10 @@ function Appps() {
     });
   };
 
+  const rate = async (rating) => {
+    alert(`rate : ${rating}`);
+  };
+
   useEffect(() => {
     const fetchUsers = async () => {
       const usersCollection = await db
@@ -223,7 +228,7 @@ function Appps() {
   return (
     <>
       <h1 className="catcontainer family">Filter Products</h1>
-      
+
       <div className="catcontainer">
         <label>
           <button
@@ -322,6 +327,16 @@ function Appps() {
             Other Gifts
           </button>
         </label>
+
+        {/* <label>
+          <button
+            onClick={() => Mugss()}
+            //onClick={Other_Gifts}
+            class="rounded-pill btncat btn-outline-warning "
+          >
+            Delete
+          </button>
+        </label> */}
       </div>
       {/* <form onSubmit={onSubmit}> */}
       {/* <input type="file" onChange={onFileChange} /><br></br>
@@ -346,7 +361,8 @@ function Appps() {
                       {/* /*className="wrap" */}
                       <p className="fon">{user.name}</p>
                       <div className="clearboth">
-                        <div className="fontsi">{/* floatleft */}
+                        <div className="fontsi">
+                          {/* floatleft */}
                           <p className="bold">Rs..{user.phno}</p>
                         </div>
                         {/* <button onClick={deleteTodo}>Delete</button> */}
@@ -358,6 +374,12 @@ function Appps() {
                           >
                             Buy Now
                           </Link>
+                          <ReactStars
+                            activeColor="white"
+                            size={40}
+                            isHalf={true}
+                            onChange={rate}
+                          />
                         </div>
                       </div>
                     </div>
