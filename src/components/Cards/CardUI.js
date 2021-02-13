@@ -6,7 +6,7 @@ const Card = (props) => {
   return (
     <div className="card text-center">
       <div className="overflow">
-        <img src={props.img} height="250px" width="300px" />
+        <img src={props.img} height="200px" width="300px" />
       </div>
       <div className="card-body text-dart">
         <h4 className="card-title">{props.title}</h4>
